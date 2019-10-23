@@ -1,0 +1,592 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#back{
+	display: block;
+	position: fixed;
+	right: 120px;
+	bottom: 59px;
+	width: 50px;
+	height: 50px;
+	background-size: 100%;
+	text-align: center;
+	background: #ddd;
+	line-height: 50px;
+	border-radius: 10px;
+	cursor: pointer;
+	display: none;
+	z-index: 3;
+}
+#back img{
+	width: 40px;
+	height: 40px;
+}
+nav{
+	width: 100%;
+	height: 60px;
+	position: fixed;
+	background:white;
+	z-index:5;
+}
+nav .logo{
+	width: 12%;
+	left: 5%;
+	top:15%;
+	/*background: red;*/
+	position: absolute;
+}
+
+nav .logo img{
+	position: relative;
+	width: 100%;
+}
+header{
+	width: 100%;
+	position: relative;
+}
+header img{
+	width: 100%;
+	position: relative;
+}
+
+header .koudai{
+	position: absolute;
+	width:26%;
+	top: 30%;
+	left: 38%;
+	opacity: 0;
+}
+header .koudai img{
+	width: 100%;
+}
+header .koudai2{
+	position: absolute;
+	width:26%;
+	top: 44%;
+	left: 38%;
+	opacity: 0;
+}
+header .koudai2 img{
+	width: 100%;
+}
+header .iphone{
+	width: 10%;
+	position: absolute;
+	background: black;
+	bottom: 40%;
+	left: 38%;
+	border-radius: 28px;
+	opacity: 0;
+}
+header .iphone img{
+	width: 100%;
+}
+header .android{
+	width: 10%;
+	position: absolute;
+	background: black;
+	bottom: 40%;
+	left: 50%;
+	border-radius: 28px;
+	opacity: 0;
+}
+header .android img{
+	width: 100%;
+}
+header .ewm{
+	width: 2%;
+	position: absolute;
+	bottom: 39%;
+	left: 62%;
+	opacity: 0;
+}
+header .ewm img{
+	width: 100%;
+}
+section .section1{
+	width: 72%;
+	/*border: 1px solid #000;*/
+	margin-top: 50px;
+	margin-left: 14%;
+	position: relative;
+}
+section .section1 img{
+	width: 100%;
+	position: relative;
+}
+section .section1 .s1d1{
+	width: 25%;
+	position: absolute;
+	top: 7%;
+	left: 10%;
+	opacity: 0;
+}
+section .section1 .s1d1 img{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+}
+section .section1 .s1d2{
+	width: 22%;
+	position: absolute;
+	top: 24%;
+	left: 11.5%;
+	opacity: 0;
+}
+section .section1 .s1d2 img{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+}
+section .section1 .picture{
+	width: 10%;
+	/*height: 340px;*/
+	position:absolute;
+	/*border: 1px solid #000;*/
+	right: 23.5%;
+	top: 50%;
+	margin-top:-75px;
+	opacity: 0;
+}
+section .section1 .picture .picture1{
+	-webkit-transform-origin:left bottom;
+	width: 100%;
+	z-index: 3;
+}
+section .section1 .picture .picture2{
+	position: absolute;
+	-webkit-transform-origin:left bottom;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+}
+section .section1 .picture .picture3{
+	position: absolute;
+	-webkit-transform-origin:left bottom;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+section .section2{
+	width: 72%;
+	/*border: 1px solid #000;*/
+	margin-top: 50px;
+	margin-left: 14%;
+	position: relative;
+}
+section .section2 img{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+}
+section .section2 .s2d1{
+	width: 25%;
+	position: absolute;
+	top: 7%;
+	right: 14%;
+	opacity: 1;
+}
+section .section2 .s2d1 img{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+}
+section .section2 .s2d2{
+	width: 22%;
+	position: absolute;
+	top: 27%;
+	right: 15.5%;
+	opacity: 1;
+}
+section .section2 .s2d2 img{
+	width: 100%;
+	position: relative;
+	z-index: -1;
+}
+section .section2 .s2pic1{
+	position: absolute;
+	width: 4.5%;
+	bottom: 33.5%;
+	left: 16%;
+	z-index: 2;
+	display: none;
+}
+section .section2 .s2pic2{
+	position: absolute;
+	width: 4.5%;
+	bottom: 33.5%;
+	left:22.5%;
+	z-index: 2;
+	display:none;
+}
+section .section2 .s2pic3{
+	position: absolute;
+	width: 4.5%;
+	bottom: 33.5%;
+	left:29%;
+	z-index: 2;
+	display: none;
+}
+section .section2 .s2pic4{
+	position: absolute;
+	width: 4.5%;
+	bottom: 33.5%;
+	left:35.5%;
+	z-index: 2;
+	display: none;
+}
+section .section3{
+	width: 72%;
+	/*border: 1px solid #000;*/
+	margin-top: 50px;
+	margin-left: 14%;
+	position: relative;
+}
+section .section3 img{
+	width: 15.2%;
+	position:relative;
+	right: 0;
+}
+section .section3 .s3pic1{
+	top:34%;
+	right: 22%;
+	position: absolute;
+	opacity: 0;
+}
+section .section3 .s3pic2{
+	width: 12%;
+	top:42%;
+	right: 19.5%;
+	position: absolute;
+	opacity: 0;
+}
+section .section3 .s3pic3{
+	width:15.2%;
+	top:51%;
+	right: 22%;
+	position: absolute;
+	opacity: 0;
+}
+section .section3 .s3pic4{
+	width: 17%;
+	top:58%;
+	right: 19.5%;
+	position: absolute;
+	opacity: 0;
+}
+section .section3 .s3pic5{
+	width:15.2%;
+	top:66%;
+	right: 22%;
+	position: absolute;
+	opacity: 0;
+}
+section .section3 .s3pic6{
+	width: 17%;
+	top:78%;
+	right: 19.5%;
+	position: absolute;
+	opacity: 0;
+}
+section .section3 .bg3{
+	width: 100%;
+	position: relative;
+	right: 0%;
+	opacity: 1;
+}
+section .section3 .s3d1{
+	width:25%;
+	position: absolute;
+	top: 7%;
+	left: 10%;
+	opacity: 0;
+}
+section .section3 .s3d1 img{
+	width: 100%;
+	position: relative;
+}
+section .section3 .s3d2{
+	width: 22%;
+	position: absolute;
+	top: 29%;
+	left: 11.5%;
+	opacity: 0;
+}
+section .section3 .s3d2 img{
+	width: 100%;
+	position: relative;
+}
+
+section .section4{
+	width: 72%;
+	/*border: 1px solid #000;*/
+	margin-top: 50px;
+	margin-left: 14%;
+	position: relative;
+}
+section .section4 .icon{
+	position: absolute;
+	width: 4.5%;
+	top: 23%;
+	left: 26%;
+	opacity: 0;
+}
+section .section4 .s4d1{
+	width: 25%;
+	position: absolute;
+	top: 7%;
+	right: 14%;
+	opacity: 0;
+}
+section .section4 .s4d1 img{
+	width: 100%;
+	position: relative;
+	
+}
+section .section4 .s4d2{
+	width: 22%;
+	position: absolute;
+	top: 29%;
+	right: 15.5%;
+	opacity: 1;
+	opacity: 0;	
+}
+section .section4 .s4d2 img{
+	width: 100%;
+	position: relative;
+}
+section .section4 .bg4{
+	width: 100%;
+	position: relative;
+	left: 0%;
+	opacity: 1;
+}
+section .section5{
+	width: 80%;
+	/*border: 1px solid #000;*/
+	margin-top: 50px;
+	margin-left: 10%;
+	position: relative;
+}
+section .section5 .bg5{
+	width: 100%;
+	position: relative;
+	opacity: 0;
+}
+section .section5 .s5d1{
+	width: 36%;
+	position: absolute;
+	top: 10%;
+	left: 32%;
+}
+section .section5 .s5d1 img{
+	width: 100%;
+	position: relative;
+}
+section .section5 .s5d2{
+	width: 43%;
+	position: absolute;
+	top: 30%;
+	left: 28.5%;
+}
+section .section5 .s5d2 img{
+	width: 100%;
+	position: relative;
+}
+section .section5 .logo{
+	display: block;
+	position: absolute;
+	width: 10%;
+	top: 45%;
+	left: 45%;
+}
+section .section5 .logo img{
+	position: relative;
+	width: 100%;
+}
+section .section5 .down{
+	display: block;
+	position: absolute;
+	width:5%;
+	top: 80%;
+	left: 47.5%;
+}
+section .section5 .down img{
+	position: relative;
+	width: 100%;
+}
+section .section6{
+	width: 30%;
+	/*border: 1px solid #000;*/
+	margin-top: 50px;
+	margin-left: 35%;
+	position: relative;
+}
+section .section6 .bg6{
+	width: 100%;
+	position: relative;
+	opacity: 0;
+}
+section .section6 .s6d1{
+	width: 56%;
+	position: absolute;
+	left:22%;
+	top: 15%;
+}
+section .section6 .s6d1 img{
+	width: 100%;
+	position: relative;
+}
+section .section6 .s6d2{
+	width: 50%;
+	position: absolute;
+	left:25%;
+	top: 50%;
+}
+section .section6 .s6d2 img{
+	width: 100%;
+	position: relative;
+}
+section .section6 .s6d3{
+	width: 40%;
+	position: absolute;
+	left:30%;
+	top:70%;
+}
+section .section6 .s6d3 img{
+	width: 100%;
+	position: relative;
+}
+section .section7{
+	position:relative;
+	/*border: 1px solid #000;*/
+	margin-top: 30px;
+	height: 300px;
+	width: 100%;
+	overflow: hidden;
+}
+section .section7 ul{
+	height: 300px;
+	list-style: none;
+	width: 9000px;
+	/*transition: all 1s;*/
+	position: relative;
+}
+section .section7 ul li{
+	width: 305px;
+	height: 300px;
+	display: inline-block;
+	margin-right: 15px;
+	height: 300px;
+	position: relative;
+} 
+section .section7 ul li img{
+	width: 300px;
+	height: 200px;
+	
+}
+section .section7 ul li span{
+	font-size: 20px;
+	display:block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+footer .footer1{
+	width: 100%;
+	/*height: 300px;*/
+	background: #282828;
+}
+footer .footer1 .footer_wrap{
+	border-bottom: 1px solid rgba(200,200,200,.6);
+}
+footer .footer1 .footer_wrap1{
+	float: left;
+	height: 131px;
+	line-height: 131px;
+	width: 80%;
+}
+footer .footer1 .footer_wrap1 a{
+	position: relative;
+	display: inline-block;
+	color: #666;
+	margin-left: 2.5%;
+}
+footer .footer1 .footer_wrap1 a span{
+	position: relative;
+	left: -5px;
+	top:-2px
+}
+footer .footer1 .footer_wrap1 a:hover{
+	color: #999;
+}
+footer .footer1 .footer_wrap1 a:hover>img{
+	display: inline-block;
+}
+footer .footer1 .footer_wrap1 a>img{
+	position:absolute;
+	bottom:80px;
+	left: -54%;
+	display: none;
+}
+footer .footer1 .footer_wrap2{
+	width: 20%;
+	float: right;
+	height: 131px;
+	line-height: 131px;
+}
+footer .footer1 .footer_wrap2 a{
+	display: inline-block;
+	width: 25px;
+	height: 21px;
+	margin-left: 160px;
+}
+footer .footer1 .footer_wrap2 a:nth-of-type(1){
+	position: relative;
+	background: url(../img/LHE/wx1.svg) no-repeat;
+}
+footer .footer1 .footer_wrap2 a:nth-of-type(2){
+	background: url(../img/LHE/wb.svg) no-repeat;
+	margin-left: 10px;
+}
+footer .footer1 .footer_wrap2 a:nth-of-type(1):hover{
+		background: url(../img/LHE/wx.svg) no-repeat;
+}
+footer .footer1 .footer_wrap2 a:nth-of-type(2):hover{
+	background: url(../img/LHE/wb1.svg) no-repeat;
+}
+footer .footer1 .footer_wrap2 a img{
+	position: absolute;
+	top:-145px;
+	left: -56px;
+	width:130px ;
+	height: 130px;
+	display: none;
+}
+footer .footer1 .footer_wrap2 a:nth-of-type(1):hover>img{
+	display: inline-block;
+}
+.footer_tap span{
+	color: #666;
+	margin-left: 7px;
+	margin-right: 7px;
+}
+.footer_tap a{
+	color: #666;
+}
+.footer_tap p:last-child span{
+	margin-left: 10px;
+	margin-right: 9px;
+}
+.footer_tap p{
+	margin-top:20px;
+}
+.footer_tap p:last-child{
+	margin-top:10px;
+	margin-bottom: 20px;
+}
+@media(max-width:1200px ) {
+	footer .footer1{
+		display: none;
+	}
+}
