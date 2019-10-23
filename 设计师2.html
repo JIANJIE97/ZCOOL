@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="icon" href="img/position/favicon.ico" />
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background:#EEEEEE;
+				/*height: 2000px;*/
+				width: auto;
+			}
+			.subnav-team{
+				width: 100%;
+				height: 56px;
+				border-bottom: 1px solid #EEEEEE;
+				background:white;
+			}
+			ul{
+				list-style: none;
+			}
+			.subnav-team ul{
+				width: 180px;
+				margin: 0 auto;
+				height: 56px;
+				background-color: rgba(255,255,255,.1);
+				text-align: center;
+				/*background: saddlebrown;*/
+			}
+			.subnav-team ul li{
+				height: 56px;
+				float: left;
+				line-height: 54px;
+			    font-size: 16px;
+			    padding: 0 25px;
+			}
+			.subnav-team ul li a{
+				text-decoration: none;
+				color: #999;
+				display: block;
+			}
+			.subnav-team ul li:hover a{
+				border-bottom: 2px solid #444;
+			    color: #282828;
+			}
+			.subnav-screen {
+				width: 100%;
+				height: 56px;
+				border-bottom: 1px solid #EEEEEE;
+				position:relative;
+				background:white;
+				margin-bottom: 20px;
+			}
+			.subnav-screen ul{
+				width: 1130px;
+				margin: 0 auto;
+			}
+			.subnav-screen ul li{
+				float: left;
+				height: 56px;
+				line-height: 56px;
+				font-size: 14px;
+				margin-right: 30px;
+			}
+			.subnav-screen ul li span{
+			    color: #999999;
+			    margin-right: 30px;
+			}
+			.subnav-screen ul li a{
+		        color: #444;
+			  	text-align: right;
+			  	text-decoration: none;
+			}
+			.subnav-screen .screen-sort{
+				position: absolute;
+				right: 210px;
+				color: #999999;
+			    font-size: 14px;
+			    line-height: 56px;
+			}
+			.subnav-screen .screen-popularity{
+			    position: absolute;
+				height: 56px;
+				line-height: 56px;
+				font-size: 14px;
+				color: #444;
+			  	text-align: right;
+			  	text-decoration: none;
+			  	right: 110px;
+			}
+			.card-list{
+				width: 1130px;
+				height: 211px;
+				margin: 0px auto 0;
+				background:white;			
+				padding: 30px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #EEEEEE;
+			}
+			.card-list .header-box{
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				float: left;
+			}
+			.card-list #card-message{
+				float: left;
+				width: 220px;
+				height: 150px;
+				position: relative;
+				margin-left: 10px;
+			}
+			.card-list #card-message img{
+				width: 16px;
+				height: 16px;
+				margin-left: 5px;
+			}
+			.card-list #card-message .card-list-name{
+				color: #333;
+			    font-size: 16px;
+			    font-weight: 600;
+			}
+			.card-list #card-message p{
+			    font-size: 12px;
+    			color: #bbb;
+			}
+			.card-list #card-message span{
+			    color: #666;
+			    font-size: 14px;
+			}	
+			.card-list #card-message span:nth-of-type(2){
+				color: #000000;
+			}	
+			.card-list #card-message a{
+			    color: #333;
+    			font-weight: 600;
+    			text-decoration: none;
+    			font-size: 14px;
+			}
+			.card-list #card-message .follow{
+				position: absolute;
+				text-align: center;
+				width: 120px;
+				height: 36px;
+				bottom: 1px;
+				line-height: 36px;
+			    border-radius: 4px;
+    			cursor: pointer;
+    			color: #444;
+			    font-family: inherit;
+    			font-size: 14px;
+				background: #FFE300;
+				border: 1px solid #ffe300;
+				bottom: 0px;
+			}
+			.card-list #card-message .follow:hover{
+				background: #FFD100;
+			}
+			.card-list ul{
+				float: left;
+				margin-left: 100px;
+			}
+			.card-list ul li{
+				float: left;
+				margin-right: 10px;
+			}
+			.card-list ul li img{
+				width: 200px;
+				height: 150px;
+				cursor: pointer;
+			}
+			.card-list .card-list-point{
+				width: 26px;
+				height: 150px;
+				float: left;
+				padding: 0 10px;
+				box-sizing: border-box;
+				position: relative;
+			}
+			.card-list .card-list-point:hover .yellow-point{
+				display: none;
+			}
+			.card-list .card-list-point img{
+				position: absolute;
+				top: 50%;
+				margin-top: -15px;
+			}
+			.page_but{
+				width: 1130px;
+				height: 40px;
+				margin: 30px auto;
+				padding: 0 312px;
+				box-sizing: border-box;
+			}
+			.page_but a{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			.page_but a:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			.page_but span{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			.page_but span:hover{
+				color: #333333;
+				background: #FFD100;
+			footer{
+				height: 229px;
+				background: #282828;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="lyh-img/img/menu.png" class="menu"/>
+			<div class="menus">
+				<p class="li"><a href="index.html">首页</a><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+				<p class="li"><a href="index5.html">发现</a></p>
+					<p class="li1"><a href="">平面</a></p>
+					<p class="li1"><a href="">UI</a></p>
+					<p class="li1"><a href="">插画</a></p>
+					<p class="li1"><a href="">动漫</a></p>
+					<p class="li1"><a href="">摄影</a></p>
+					<p class="li1"><a href="">空间</a></p>
+					<p class="li1"><a href="">工业/产品</a></p>
+					<p class="li1"><a href="">三维</a></p>
+					<p class="li1"><a href="">手工艺</a></p>
+					<p class="li1"><a href="">纯艺术</a></p>
+					<p class="li1"><a href="">服装</a></p>
+					<p class="li1"><a href="">其他</a></p>
+					<p class="li1"><a href="">精选作品</a></p>
+					<p class="li1"><a href="">精选文章</a></p>
+					<p class="li1"><a href="">精选收藏</a></p>
+				<p class="li"><a href="pzk1.html">同城</a></p>
+				<p class="li"><a href="position.html">职位</a></p>
+					<p class="lis"><a href="">职位</a></p>
+					<p class="lis"><a href="">公司</a></p>
+					<p class="lis"><a href="">+发布职位</a></p>
+				<p class="li"><a href="pzk2.html">活动</a></p>
+					<p class="lis"><a href="">设计大赛</a></p>
+					<p class="lis"><a href="">公司专题策划</a></p>
+					<p class="lis"><a href="">线上活动</a></p>
+					<p class="lis"><a href="">线下活动</a></p>
+					<p class="lis"><a href="">需为吸引瓶</a></p>
+				<p class="li"><a href="index3.html">正版素材</a></p>
+					<p class="lis"><a href="index3.html">图片</a></p>
+					<p class="lis"><a href="">视频</a></p>
+					<p class="lis"><a href="index4.html">字体</a></p>
+					<p class="lis"><a href="">音乐</a></p>
+				<p class="li"><a href="course.html" target="_blank">课程</a></p>
+					<p class="lis"><a href="">正在热销</a></p>
+					<p class="lis"><a href="">口碑好课</a></p>
+				<p class="li"><a href="">...</a></p>	
+					<p class="lis"><a href="榜单.html">榜单</a></p>
+					<p class="lis"><a href="设计师2.html">设计师</a></p>
+					<p class="lis"><a href="站酷APP.html">站酷APP</a></p>
+					<p class="lis"><a href="字体库.html">站酷字体</a></p>
+			</div>
+			<img src="lyh-img/img/logo.svg" class="pull-left logo"/>
+			<nav class="pull-left">
+				<ul class="nav pull-left clearfix">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="index5.html">发现</a>
+						<div class="fx">
+							<div class="top">
+								<div><a href="">平面</a><span>|</span></div>	
+								<div><a href="">UI</a><span>|</span></div>	
+								<div><a href="">网页</a><span>|</span></div>	
+								<div><a href="">插画</a><span>|</span></div>	
+								<div><a href="">动漫</a><span>|</span></div>	
+								<div><a href="">摄影</a><span>|</span></div>	
+								<div><a href="">空间</a><span>|</span></div>	
+								<div><a href="">工业/产品</a><span>|</span></div>	
+								<div><a href="">三维</a><span>|</span></div>	
+								<div><a href="">影视</a><span>|</span></div>	
+								<div><a href="">手工艺</a><span>|</span></div>	
+								<div><a href="">纯艺术</a><span>|</span></div>	
+								<div><a href="">服装</a><span>|</span></div>	
+								<div><a href="">其他</a><span>|</span></div>	
+											
+							</div>
+							<hr/>
+							<div class="bottom">
+								<a href="">精选作品&nbsp;></a>
+								<a href="">精选文章&nbsp;></a>
+								<a href="">精选收藏&nbsp;></a>
+							</div>
+						</div>
+					
+					</li>
+					<li><a href="pzk1.html">同城</a></li>
+					<li>
+						<a href="position.html">职位</a>
+						<div class="zw">
+							<p><a href="">职位</a></p>
+							<p><a href="">公司</a></p>
+							<p><a href="">+发布职位</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="pzk2.html">活动</a>
+						<div class="zw">
+							<p><a href="">设计大赛</a></p>
+							<p><a href="">公司专题策划</a></p>
+							<p><a href="">线上活动</a></p>
+							<p><a href="">线下活动</a></p>
+							<p><a href="">学习音频</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="index3.html">正版素材</a>
+						<div class="zw">
+							<p><a href="index3.html">图片</a></p>	
+							<p><a href="">视频</a></p>
+							<p><a href="index4.html">字体</a></p>
+							<p><a href="">音乐</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="course.html" target="_blank">课程</a>
+						<div class="zw">
+							<p><a href="">正在热销</a></p>
+							<p><a href="">口碑好课</a></p>
+						</div>
+					</li>
+					<li>
+						<a href=""></a>
+						<div class="zw">
+							<p><a href="榜单.html">榜单</a></p>
+							<p><a href="设计师2.html">设计师</a></p>
+							<p><a href="站酷APP.html">站酷APP</a></p>
+							<p><a href="字体库.html">站酷字库</a></p>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<span><a href="">登录</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="">注册</a></span>
+			<div class="search">
+				<div class="search_top">
+					<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<input type="text" name="" id="" />
+					<img src="lyh-img/img/seach.svg"/>
+				</div>
+				<div class="search_bot">
+					<div class="search1">热门搜索</div>
+					<div class="search2">2019毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">2018毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">我是毕业生</div>
+				</div>
+			</div>
+		</header>
+		<nav class="subnav-team">
+			<ul>
+				<li><a href="">设计师</a></li>
+				<li><a href="">团体</a></li>
+			</ul>
+		</nav>
+		<nav class="subnav-screen">
+			<ul>
+				<li><span>筛选：</span><a href="">全部推荐 ∨</a></li>
+				<li><a href="">不限职业 ∨</a></li>
+				<li><a href="">不限城市  ∨</a></li>
+			</ul>
+			<span class="screen-sort">排序：</span>
+			<a class="screen-popularity" href="">人气最多 ∨</a>
+		</nav>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/img/header-pic.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">刘兵克</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic1.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic2.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic3.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic1.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">研习设K先生</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic4.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic5.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic6.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic2.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">_小矛</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href="小矛的主页.html"> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic7.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic8.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic9.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic3.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">叻仔先森</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic10.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic11.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic12.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic4.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">左手韩</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic13.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic14.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic15.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic5.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">你好大海品牌设计 </span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic16.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic17.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic18.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic6.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">michaelpst</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic19.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic20.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic21.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="card-list">
+			<img class="header-box" src="lyh-img/imges/header-pic7.jpg"/>
+			<div id="card-message">
+				<span class="card-list-name">杰克sean</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+				<p>济南 | 平面设计师</p><br />
+				<nobr><span>创作</span><a href=""> 316</a> <span> ｜ </span> <span> 粉丝</span><a href="">255456</a></nobr>
+				<p>字体网课&设计合作-咨询微信:bingkekk</p>
+				<span class="follow">关注</span>
+			</div>
+			<ul>
+				<li><img src="lyh-img/img/nav-pic22.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic23.jpg"/></li>
+				<li><img src="lyh-img/img/nav-pic24.jpg"/></li>
+			</ul>
+			<a class="card-list-point" href="">
+				<img class="black-point" src="lyh-img/img/card-point.png"/>
+				<img class="yellow-point" src="lyh-img/img/card-point-yellow.png"/>
+			</a>
+		</div>
+		<div class="page_but">
+			<span href="">1</span>
+			<a href="">2</a>
+			<a href="">3</a>
+			<a href="">4</a>
+			<a href="">5</a>
+			<a href="">6</a>
+			<a href="">7</a>
+			<span href="">...</span>
+			<a href="">99</a>
+			<a href="">100</a>
+			<a href="">></a>
+		</div>
+		<footer>
+			<div class="footer1">
+				<div class="footer_wrap container">
+					<div class="footer_wrap1">         
+						<a href=""><span><img src="lyh-img/img/app.svg"/></span><img src="lyh-img/img/ewm.png"/>移动版</a>
+						<a href="">关于我们</a>
+						<a href="">加入站酷</a>
+						<a href="">用户协议</a>
+						<a href="">隐私政策</a>
+						<a href="">侵权申诉</a>
+						<a href="">企业服务</a>
+						<a href="">帮助中心</a>
+						<a href="">联系我们</a>
+						<a href="">中文</a>
+						<a href="">English</a>
+					</div>
+					<div class="footer_wrap2">
+						<a href=""><img src="lyh-img/img/ewm2.jpg"/></a>
+						<a href=""></a>
+					</div>
+				</div>
+				<div class="footer_tap container">						     
+					<p>
+					<a href="">京ICP备11017824号-4</a>
+					<span>|</span>
+					<a href="">京ICP证130164号</a>
+					<span>|</span>
+					<a href="">京公网安备11010502000501号</a>
+					<span>|</span>
+					<a href=""> 网络文化经营许可证 京网文[2016]6173-844号</a>
+					<span>|</span>
+					<a href="">广播电视节目制作经营许可证（京）字第06990号</a>
+					</p>
+					<p>
+					<a href="">营业执照</a>
+					<span>|</span>
+					<a href="">网上有害信息举报专区</a>
+					<span>|</span>
+					<a href="">不良信息举报电话：010-56538658</a>
+					<span>|</span>
+					<a href=""> 举报邮箱 jubao@zcool.com.cn</a>
+					<span>|</span>
+					<a href="">联系电话：010-56538600</a>
+					<span>|</span>
+					<a href="">Copyright © 2006-2019 ZCOOL站酷</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

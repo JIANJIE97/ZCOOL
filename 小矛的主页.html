@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="icon" href="img/position/favicon.ico" />
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background: transparent;
+				height: 3500px;
+			}
+			.back-top{
+			    background-color: #ddd;
+			    background-image: url(lyh-img/imges/back-top.png);
+			    background-repeat: no-repeat;
+			    background-position: center;
+		        width: 50px;
+		        height: 50px;
+			    position: fixed;
+			    left: 50%;
+			    bottom: 34px;
+		        margin-left: 575px;
+		        z-index: 10;
+		       	border-radius: 5px;
+		       	display: none;
+			}
+			.back-top:hover{
+				background-image: url(lyh-img/imges/back-top-hover.png);
+			}
+			.back-top a{
+				display: block;
+			    display: inline-block;
+			    vertical-align: middle;
+			    width: 50px;
+			    height: 50px;
+			    text-decoration: none;
+			}
+			.bd-pic{
+				width:100%;
+				background: url(lyh-img/img/bd-pic.JPG)left top;
+			  	background-attachment:fixed;
+			}
+			.person_home{
+				width: 100%;
+				height: 344px;
+				/*background: salmon;*/
+				position: relative;
+				overflow: hidden;
+			}
+			.person_home #aside-right-share{
+			    content: "";
+			    display: block;
+			    width: 42px;
+			    height: 24px;
+			    background-color: rgba(0, 0, 0, 0.5);
+			    background-image: url(lyh-img/images/selectwhitearrow.png);
+			    background-repeat: no-repeat;
+			    background-position: center;
+			    border-radius: 50px;
+			    cursor: pointer;
+			    position: absolute;
+			    top: 50px;
+			    right: 100px;
+			    z-index: 5;
+			}
+			.person_home img{
+				width: 190%;
+				/*height: 344px;*/
+				display: block;
+				position: absolute;
+				left:50%;
+				margin-left: -95%;
+				bottom: 0px;
+			}
+			.person_home #Gradual_color{
+				width: 100%;
+				height: 180px;
+			    background: -webkit-linear-gradient( rgba(255,255,255,0), rgba(0,0,0,.4));
+			    background: -o-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,.4)); 
+			    background: -moz-linear-gradient( rgba(255,255,255,0), rgba(0,0,0,.4));
+			    background: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,.4));
+			    position: absolute;
+			    z-index: 0;
+			    bottom: 0px;
+			    left: 0px;
+			}
+			.person_home #data{
+				width: 100%;
+				height: 75px;
+/*				background: skyblue;*/
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+				z-index: 1;
+				padding:0 110px;
+				box-sizing: border-box;
+			}
+			.person_home #data p{
+				display: block;
+				width:220px;
+				height: 52px;
+				/*background: saddlebrown;*/
+				float: left;
+				text-align: center;
+				color: white;
+				position: relative;
+				font-size: 14px;
+			}
+			.person_home #data p:nth-of-type(2){
+				margin-right: 249px;
+			}
+			.person_home #data a{
+				text-decoration: none;
+				display: block;
+				width: 100%;
+				height: 40px;
+				font-size: 24px;
+				color: white;
+			}
+			.home_messag{
+				padding-top: 60px;
+				width: 100%;
+				height: 224px;
+				background: white;
+				position: relative;
+				box-sizing: border-box;
+			}
+			.home_messag a{
+				display: block;
+				width: 128px;
+				height: 128px;
+				border-radius: 50%;
+				overflow: hidden;
+				position: absolute;
+				top: -68px;
+				left: 50%;
+				margin-left: -69px;
+				z-index: 3;
+				border: 5px solid gainsboro;
+			}
+			.home_messag a img{
+				width: 128px;
+				height: 128px;
+			}
+			.home_messag p{
+				display: block;
+				text-align: center;
+			}
+			.home_messag .name{
+				width: 100%;
+				height: 24px;
+			    font-size: 24px;
+				color: #444444;
+				margin-top: 20px;
+			}
+			.home_messag .name img{
+				width: 18px;
+				height: 18px;
+				position: relative;
+				top: 3px;
+				left: 5px;
+			}
+			.home_messag .where{
+			    font-size: 12px;
+    			color: #bbbbbb;
+    			width: 100%;
+    			height: 12px;
+    			margin-top: 10px;
+    			
+			}
+			.home_messag .wechat{
+				width: 100%;
+				height: 14px;
+				margin-top: 20px;
+			    font-size: 14px;
+   				 color: #666666;
+			}
+			.home_messag span{
+				position: absolute;
+				text-align: center;
+				width: 120px;
+				height: 36px;
+				bottom: 1px;
+				line-height: 36px;
+			    border-radius: 4px;
+    			cursor: pointer;
+    			color: #444;
+			    font-family: inherit;
+    			font-size: 14px;
+			}
+			.home_messag .follow{
+				background: #FFE300;
+				border: 1px solid #ffe300;
+				left: 50%;
+				margin-left: -120px;
+			}
+			.home_messag .follow:hover{
+				background: #FFD100;
+			}
+			.home_messag .letter{
+				border: 1px solid #BBBBBB;
+				left: 50%;
+				margin-left: 15px;
+			}
+			.nav-m{
+				width: 100%;
+				margin: 0 auto;
+				height: 56px;
+				background: white;
+				position: relative;
+				z-index: 5;
+			}
+			ul{
+				list-style: none;
+			}
+			.nav-m ul {
+				width: 594px;
+				margin: 0 auto;
+				height: 56px;
+				background-color: rgba(255,255,255,.1);
+				text-align: center;
+			}
+			.nav-m ul li{
+				padding: 0 30px;
+				height: 56px;
+				float: left;
+				line-height: 54px;
+			    font-size: 16px;
+			}
+			.nav-m  #nav-m-hover{
+				width: 1349px;
+				height: 70px;
+				position: absolute;
+				bottom: -70px;
+				left: 0px;
+				padding:0 110 0px;
+				box-sizing: border-box;
+				background: white;
+				height: 70px;
+				display: none;
+				border:1px solid #EEEEEE;
+			
+			}
+			.nav-m  #nav-m-hover .nav-m-hover-left{
+				display: block;
+			    color: #999;
+			    font-size: 14px;
+			    float: left;
+			    margin-left: 105px;
+			    position: absolute;
+			    top: 50%;
+			    margin-top: -9px;
+			}
+			.nav-m  #nav-m-hover .nav-m-hover-right{
+			    color: #D36F16;
+			    display: block;
+			    font-size: 14px;
+			    width: 50px;
+			    height: 25px;
+			    text-align: center;
+			    line-height: 25px;
+			    position: absolute;
+			    border-radius: 5px;
+			    float: left;
+			    margin-left: 190px;
+			    top: 50%;
+			    margin-top: -13px;
+			}
+			.nav-m  #nav-m-hover .nav-m-hover-right:hover{
+				background: #F2F2F2;
+			}
+			.nav-m ul li:hover a{
+				border-bottom: 2px solid #444;
+			    color: #282828;
+			}
+			.nav-m ul li a{
+				text-decoration: none;
+				color: #999;
+				display: block;
+			}
+			section{
+				width: 1349px;
+				height: 2638px;
+				/*height: 1000px;*/
+				padding: 0 105px;
+				box-sizing: border-box;
+				background: transparent;
+				/*overflow: hidden;*/
+				position: relative;
+			}
+			section .sec_top_l{
+				display: block;
+				margin-top: 16px;
+				font-size: 14px;
+   				color: #666;
+			}
+			section .sec_top_r{
+				position: absolute;
+				right: 105px;
+				top: 16px;
+			    font-size: 14px;
+   				color: #666;
+			}
+			section .connter{
+				width: 1130px;
+				height: 1312px;
+				/*background: transparent;*/
+			}
+			section .connter li{
+				width: 18.4%;
+				height: 308px;
+				/*background: chartreuse;*/
+				margin-top: 20px;
+			    border-radius: 4px;
+			    background: white;
+			    float: left;
+			    margin-right: 2%;
+			}
+			section .connter li:nth-of-type(5n){
+				 margin-right: 0%;
+			}
+			section .connter li img{
+				width: 100%;
+				vertical-align: top;
+				cursor: pointer;
+			}
+			section .connter li img:hover{
+				opacity: 0.8;
+			}
+			section .connter li div{
+				width: 100%;
+				height: 100px;
+				padding:11px 16px 13px 16px ;
+				box-sizing: border-box;
+				position: relative;
+				border-bottom: 1px solid #EEEEEE;
+			}
+			section .connter li div a{
+				display: block;
+				font-size: 14px;
+	   			color: #333;
+	   			width: 150px;
+			    vertical-align: middle;
+	    		white-space: nowrap;
+	    		overflow: hidden;
+	    		text-overflow: ellipsis;
+	    		text-decoration: none;
+	    		/*position: relative;*/
+			}
+			section .connter li div a:hover{
+				color:#DB6F16 ;
+			}
+			section .connter li div a img{
+				width: 14px;
+				height: 14px;
+				position: absolute;
+				right: 15px;
+				top: 13px;
+			}
+			section .connter li div p{
+				font-size: 12px;
+			    color: #bbb;
+			    margin-bottom: 17px;
+			    height: 18px;
+			}
+			section .connter li div span{
+			    font-size: 12px;
+			    color: #bbb;
+			    position: absolute;
+			    bottom: 14px;
+			    cursor: pointer;
+			}
+			section .connter li div .visit{
+				left: 25px;
+			}
+			section .connter li div .comment{
+				left: 85px;
+			}
+			section .connter li div .nice{
+				left: 135px;
+			}
+			section .connter li div span img{
+				width: 16px;
+				height: 16px;
+				position: relative;
+				right: 5px;
+			}
+			section .connter li .times{
+				display: block;
+				width: 100%;
+				height: 50px;
+				text-align: right;
+				padding: 0 16px;
+				box-sizing: border-box;
+				line-height: 50px;
+			    font-size: 12px;
+		        color: #bbb;
+			}
+			section .page_but{
+				width: 1136px;
+				height: 40px;
+				padding: 0 315px;
+				box-sizing: border-box;
+				margin-top: 35px;
+			}
+			section .page_but a{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			section .page_but a:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			section .page_but span{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			section .page_but span:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			section .visitor-l{;
+				width: 260px;
+				height: 438px;
+				background: white;
+				float: left;
+				margin-right: 20px;
+				margin-top: 30px;
+			}
+			section .visitor-l #visior-l-top{
+				width: 100%;
+				padding: 0 20px;
+				text-align: left;
+			    height: 48px;
+    			background: #fff;
+    			border-bottom: 1px solid #eee;
+    			line-height: 48px;
+    			color: #444444;
+    			box-sizing: border-box;
+			}
+			section .visitor-l #visior-l-bottom{
+				width: 100%;
+				padding: 0 20px;
+			}
+			section .visitor-l #visior-l-bottom ul{
+				width: 100%;
+			}
+			section .visitor-l #visior-l-bottom ul li{
+				float: left;
+				margin-bottom: 30px;
+				margin-right: 38px;
+				width: 48px;
+				height: 90px;
+				overflow: hidden;
+				margin-right:38px;
+			    text-align: center;
+			}
+			section .visitor-l #visior-l-bottom ul li:nth-of-type(3n){
+				margin-right: 0px;
+			}
+			section .visitor-l #visior-l-bottom ul li .visitor-l-bottom-headbox{
+				display: block;
+				width: 48px;
+				height: 48px;
+				border-radius: 24px;
+				overflow: hidden;
+			}
+			section .visitor-l #visior-l-bottom ul li .visitor-l-bottom-headbox img{
+				width: 100%;
+				height: 48px;
+			}
+			section .visitor-l #visior-l-bottom ul li .visitor-l-bottom-names{
+				text-decoration: none;
+				display: block;
+				width: 100%;
+				margin-top: 10px;
+				margin-bottom: 5px;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    overflow: hidden;
+			    color: #444444;
+			    font-size: 12px;
+			}
+			section .visitor-l #visior-l-bottom ul li .visitor-l-bottom-times{
+			    width: 48px;
+			    display: block;
+			    color: #bbbbbb;
+			    white-space: nowrap;
+			    font-size: 10px;
+			    position: relative;
+			    bottom: 5px;
+			}
+			section .visitor-r{
+				width: 850px;
+				height: 1000px;
+				background: white;
+				margin-top: 30px;
+				float: left;
+			}
+			section .visitor-r #visitor-r-top {
+				width: 100%;
+				padding: 30px;
+				height: 150px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #EEEEEE;
+				position: relative;
+			}
+			section .visitor-r #visitor-r-top input{
+				width: 100%;
+				height: 40px;
+			    color: #666;
+			    font-size: 14px;
+			    border: 1px solid #ddd;
+   				padding:10px 50px 10px 20px;
+   				box-sizing: border-box;
+			    background: #f4f4f4;
+			    border-radius: 5px;
+			}
+			section .visitor-r #visitor-r-top figure{
+				width: 100%;
+				height: 38px;
+				margin-top: 10px;
+				position: relative;
+			}
+			section .visitor-r #visitor-r-top  span{
+				position: absolute;
+				width: 100px;
+			    right: -30px;
+			    top: 42px;
+				font-style: normal;
+				color: #999;
+				font-size: 12px;
+			}
+			section .visitor-r #visitor-r-top figure img{
+				position: relative;
+				top: 20px;
+				left: 10px;
+				cursor: pointer;
+			}
+			section .visitor-r #visitor-r-top figure p{
+				position: absolute;
+				left: 40px;
+			    color: #666;
+			    font-size: 10px;
+			    cursor: pointer;
+			}
+			section .visitor-r #visitor-r-top figure p:hover{
+				color: #D36F16;
+			}
+			section .visitor-r #visitor-r-top a{
+				display: block;
+				color: #bbb;
+			    width: 100px;
+			    height: 36px;
+			    line-height: 36px;
+			    background: #eee;
+			    border: 1px solid #eee;
+			    border-radius: 4px;
+			    font-size: 14px;
+			    padding: 0 20px;
+			    box-sizing: border-box;
+			    position: absolute;
+			    right: 0px;
+			    text-decoration: none;
+			    text-align: center;
+			}
+			section .visitor-r #visitor-r-bottom{
+				width: 100%;
+				padding-top: 30px;
+			}    
+			section .visitor-r #visitor-r-bottom .leave-message{
+				padding: 0 30px;
+			    color: #282828;
+			    box-sizing: border-box;
+			    font-size: 14px;
+			}
+			section .visitor-r #visitor-r-bottom p span{
+			    color: #bbb;
+			    margin-left: 10px;
+			}
+			section .visitor-r #visitor-r-bottom ul{
+				width: 100%;
+				padding:0 30px;
+				box-sizing: border-box;
+			}
+			section .visitor-r #visitor-r-bottom ul li {
+				width: 100%;
+				height: 136px;
+				position: relative;
+			}
+			section .visitor-r #visitor-r-bottom ul li .header-box2{
+				display: block;
+				overflow: hidden;
+				width: 48px;
+				height: 48px;
+				border-radius: 24px;
+				position: absolute;
+				top: 30px;
+				cursor: pointer;
+				z-index: 3;
+			}
+			section .visitor-r #visitor-r-bottom ul li a img{
+				width: 48px;
+				height: 48px;
+				cursor:pointer;
+				/*position: absolute;*/
+			}
+			section .visitor-r #visitor-r-bottom ul li figure{
+				width: 760px;
+				height: 136px;
+				float: left;
+				box-sizing: border-box;
+				position: relative;
+				padding: 30px 0px 30px 68px;
+				border-bottom: 1px solid #F1F1F1;
+			}
+			section .visitor-r #visitor-r-bottom ul li figure a{
+			    font-weight: 800;
+		        color: #282828;
+           		margin-right: 20px;
+           		position: relative;
+           		text-decoration: none;
+           		font-size: 14px;
+			}
+			section .visitor-r #visitor-r-bottom ul li figure a:hover{
+				color: #D87F31;
+			}
+			section .visitor-r #visitor-r-bottom ul li figure span{
+				color: #bbb;
+				margin-right: 10px;
+				font-size: 14px;
+			}
+			section .visitor-r #visitor-r-bottom ul li figure p{
+				margin-top: 8px;
+			    line-height: 24px;
+			    font-size: 14px;
+			    word-break: break-word;
+		        color: #666;
+			}
+			footer{
+			}
+			footer .footer1{
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="lyh-img/img/menu.png" class="menu"/>
+			<div class="menus">
+				<p class="li"><a href="index.html">首页</a><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+				<p class="li"><a href="index5.html">发现</a></p>
+					<p class="li1"><a href="">平面</a></p>
+					<p class="li1"><a href="">UI</a></p>
+					<p class="li1"><a href="">插画</a></p>
+					<p class="li1"><a href="">动漫</a></p>
+					<p class="li1"><a href="">摄影</a></p>
+					<p class="li1"><a href="">空间</a></p>
+					<p class="li1"><a href="">工业/产品</a></p>
+					<p class="li1"><a href="">三维</a></p>
+					<p class="li1"><a href="">手工艺</a></p>
+					<p class="li1"><a href="">纯艺术</a></p>
+					<p class="li1"><a href="">服装</a></p>
+					<p class="li1"><a href="">其他</a></p>
+					<p class="li1"><a href="">精选作品</a></p>
+					<p class="li1"><a href="">精选文章</a></p>
+					<p class="li1"><a href="">精选收藏</a></p>
+				<p class="li"><a href="pzk1.html">同城</a></p>
+				<p class="li"><a href="position.html">职位</a></p>
+					<p class="lis"><a href="">职位</a></p>
+					<p class="lis"><a href="">公司</a></p>
+					<p class="lis"><a href="">+发布职位</a></p>
+				<p class="li"><a href="pzk2.html">活动</a></p>
+					<p class="lis"><a href="">设计大赛</a></p>
+					<p class="lis"><a href="">公司专题策划</a></p>
+					<p class="lis"><a href="">线上活动</a></p>
+					<p class="lis"><a href="">线下活动</a></p>
+					<p class="lis"><a href="">需为吸引瓶</a></p>
+				<p class="li"><a href="index3.html">正版素材</a></p>
+					<p class="lis"><a href="index3.html">图片</a></p>
+					<p class="lis"><a href="">视频</a></p>
+					<p class="lis"><a href="index4.html">字体</a></p>
+					<p class="lis"><a href="">音乐</a></p>
+				<p class="li"><a href="course.html" target="_blank">课程</a></p>
+					<p class="lis"><a href="">正在热销</a></p>
+					<p class="lis"><a href="">口碑好课</a></p>
+				<p class="li"><a href="">...</a></p>	
+					<p class="lis"><a href="榜单.html">榜单</a></p>
+					<p class="lis"><a href="设计师2.html">设计师</a></p>
+					<p class="lis"><a href="站酷APP.html">站酷APP</a></p>
+					<p class="lis"><a href="字体库.html">站酷字体</a></p>
+			</div>
+			<img src="lyh-img/img/logo.svg" class="pull-left logo"/>
+			<nav class="pull-left">
+				<ul class="nav pull-left clearfix">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="index5.html">发现</a>
+						<div class="fx">
+							<div class="top">
+								<div><a href="">平面</a><span>|</span></div>	
+								<div><a href="">UI</a><span>|</span></div>	
+								<div><a href="">网页</a><span>|</span></div>	
+								<div><a href="">插画</a><span>|</span></div>	
+								<div><a href="">动漫</a><span>|</span></div>	
+								<div><a href="">摄影</a><span>|</span></div>	
+								<div><a href="">空间</a><span>|</span></div>	
+								<div><a href="">工业/产品</a><span>|</span></div>	
+								<div><a href="">三维</a><span>|</span></div>	
+								<div><a href="">影视</a><span>|</span></div>	
+								<div><a href="">手工艺</a><span>|</span></div>	
+								<div><a href="">纯艺术</a><span>|</span></div>	
+								<div><a href="">服装</a><span>|</span></div>	
+								<div><a href="">其他</a><span>|</span></div>	
+											
+							</div>
+							<hr/>
+							<div class="bottom">
+								<a href="">精选作品&nbsp;></a>
+								<a href="">精选文章&nbsp;></a>
+								<a href="">精选收藏&nbsp;></a>
+							</div>
+						</div>
+					
+					</li>
+					<li><a href="pzk1.html">同城</a></li>
+					<li>
+						<a href="position.html">职位</a>
+						<div class="zw">
+							<p><a href="">职位</a></p>
+							<p><a href="">公司</a></p>
+							<p><a href="">+发布职位</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="pzk2.html">活动</a>
+						<div class="zw">
+							<p><a href="">设计大赛</a></p>
+							<p><a href="">公司专题策划</a></p>
+							<p><a href="">线上活动</a></p>
+							<p><a href="">线下活动</a></p>
+							<p><a href="">学习音频</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="index3.html">正版素材</a>
+						<div class="zw">
+							<p><a href="index3.html">图片</a></p>	
+							<p><a href="">视频</a></p>
+							<p><a href="index4.html">字体</a></p>
+							<p><a href="">音乐</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="course.html" target="_blank">课程</a>
+						<div class="zw">
+							<p><a href="">正在热销</a></p>
+							<p><a href="">口碑好课</a></p>
+						</div>
+					</li>
+					<li>
+						<a href=""></a>
+						<div class="zw">
+							<p><a href="榜单.html">榜单</a></p>
+							<p><a href="设计师2.html">设计师</a></p>
+							<p><a href="站酷APP.html">站酷APP</a></p>
+							<p><a href="字体库.html">站酷字库</a></p>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<span><a href="">登录</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="">注册</a></span>
+			<div class="search">
+				<div class="search_top">
+					<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<input type="text" name="" id="" />
+					<img src="lyh-img/img/seach.svg"/>
+				</div>
+				<div class="search_bot">
+					<div class="search1">热门搜索</div>
+					<div class="search2">2019毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">2018毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">我是毕业生</div>
+				</div>
+			</div>
+		</header>
+		<aside class="back-top">
+			<a href="javascript:void(0);"></a>
+		</aside>
+		<div class="person_home">
+			<!--<div id="aside-right-share">
+				<ul>
+					<li><a href="">分享</a></li>
+					<li><a href="">举报</a></li>
+					<li><a href="">屏蔽TA</a></li>
+				</ul>
+			</div>-->
+			<img src="lyh-img/img/person_home_gif.jpg"/>
+			<div id="Gradual_color">
+			</div>
+			<div id="data">
+				<p>人气<a href="">92342324</a></p>
+				<p>积分<a href="">6221</a></p>
+				<p>粉丝<a href="">64212</a></p>
+				<p>关注<a href="">8242</a></p>
+			</div>
+		</div>
+		<div class="home_messag">
+			<a href=""><img src="lyh-img/img/head_pic.jpg"/></a>
+			<div id="main_message">
+				<p class="name">_小矛<nobr><img src="lyh-img/img/honor.svg"/></nobr></p>
+				<p class="where">北京 | 插画师</p>
+				<p class="wechat">我的微信号：solosm</p>
+				<span class="follow">关注</span><span class="letter">私信</span>
+			</div>
+		</div>
+		<div class="nav-m">
+			<ul>
+				<li class="nav-show-hover">
+					<a href="">首页</a>
+				</li>
+				<li><a href="">推荐</a></li>
+				<li><a href="">资料</a></li>
+				<li><a href="">收藏</a></li>
+				<li><a href="">生活</a></li>
+				<li><a href="">创作历程</a></li>
+			</ul>
+			<div id="nav-m-hover">
+				<span class="nav-m-hover-left">分类</span>
+				<span class="nav-m-hover-right">全部</span>
+			</div>
+		</div>
+		<section>
+			<span class="sec_top_l">共上传582组创作</span>
+			<span class="sec_top_r">时间最新  ∨</span>
+			<ul class="connter">
+				<li>
+					<img src="lyh-img/img/lis-1.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-2.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-3.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-4.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-5.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-6.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-7.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-8.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-9.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-10.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-11.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-12.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-13.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-14.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-15.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-16.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-17.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-18.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-19.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+				<li>
+					<img src="lyh-img/img/lis-20.jpg"/>
+					<div>
+						<a href="">#小矛画画啦# 凿壁借光的小西瓜！有华丽的剪辑效果!<img src="lyh-img/img/putongtuijian.svg"/></a>
+						<p>动漫-其他动漫</p>
+						<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+						<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+						<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+					</div>
+					<span class="times">六天前</span>
+				</li>
+			</ul>
+			<div class="page_but">
+				<span href="">1</span>
+				<a href="">2</a>
+				<a href="">3</a>
+				<a href="">4</a>
+				<a href="">5</a>
+				<a href="">6</a>
+				<a href="">7</a>
+				<span href="">...</span>
+				<a href="">29</a>
+				<a href="">30</a>
+				<a href="">></a>
+			</div>
+			<div class="visitor-l">
+				<div id="visior-l-top">
+					访客
+				</div>
+				<div id="visior-l-bottom">
+					<ul>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s1.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s2.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s3.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s4.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s5.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s6.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s7.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s8.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+						<li>
+							<a class="visitor-l-bottom-headbox" href=""><img src="lyh-img/img/header-s9.jpg"/></a>
+							<a class="visitor-l-bottom-names">XXX</a>
+							<span class="visitor-l-bottom-times">一分钟前</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="visitor-r">
+				<div id="visitor-r-top">
+					<input type="" name="" id="" value="" />
+					<span>200</span>
+					<figure>
+						<nobr><img src="lyh-img/img/biaoqing.svg"/><p>添加表情 </p></nobr>
+						<a href="">留言</a>
+					</figure>
+				</div>
+				<div id="visitor-r-bottom">
+					<p class="leave-message">全部留言<span>2332</span></p>
+					<ul>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>快点更新啊！！！</p>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>还没见过矛大神的照片。哈哈，好想看看发际线超高的矛大佬！</p>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s7.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>快点更新啊！！！</p>
+							</figure>
+						</li><li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s8.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>垃圾分类：你是什么垃圾！</p>
+							</figure>
+						</li><li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s9.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>垃圾分类：你是什么垃圾</p>
+							</figure>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="footer1">
+				<div class="footer_wrap container">
+					<div class="footer_wrap1">         
+						<a href=""><span><img src="lyh-img/img/app.svg"/></span><img src="lyh-img/img/ewm.png"/>移动版</a>
+						<a href="">关于我们</a>
+						<a href="">加入站酷</a>
+						<a href="">用户协议</a>
+						<a href="">隐私政策</a>
+						<a href="">侵权申诉</a>
+						<a href="">企业服务</a>
+						<a href="">帮助中心</a>
+						<a href="">联系我们</a>
+						<a href="">中文</a>
+						<a href="">English</a>
+					</div>
+					<div class="footer_wrap2">
+						<a href=""><img src="lyh-img/img/ewm2.jpg"/></a>
+						<a href=""></a>
+					</div>
+				</div>
+				<div class="footer_tap container">						     
+					<p>
+					<a href="">京ICP备11017824号-4</a>
+					<span>|</span>
+					<a href="">京ICP证130164号</a>
+					<span>|</span>
+					<a href="">京公网安备11010502000501号</a>
+					<span>|</span>
+					<a href=""> 网络文化经营许可证 京网文[2016]6173-844号</a>
+					<span>|</span>
+					<a href="">广播电视节目制作经营许可证（京）字第06990号</a>
+					</p>
+					<p>
+					<a href="">营业执照</a>
+					<span>|</span>
+					<a href="">网上有害信息举报专区</a>
+					<span>|</span>
+					<a href="">不良信息举报电话：010-56538658</a>
+					<span>|</span>
+					<a href=""> 举报邮箱 jubao@zcool.com.cn</a>
+					<span>|</span>
+					<a href="">联系电话：010-56538600</a>
+					<span>|</span>
+					<a href="">Copyright © 2006-2019 ZCOOL站酷</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<div class="bd-pic"></div>
+		<script>
+			//滚轮置顶导航
+			$(window).scroll(function(){
+				console.log($(window).scrollTop());
+				if($(window).scrollTop()>610){
+					$('.nav-m').css({'position':'fixed','top':'0px'})
+				}else{
+					$('.nav-m').css({'position':'relative'})
+				}
+			})
+			//导航栏‘首页’弹出
+			$('.nav-show-hover').hover(function(){
+				$('.nav-m  #nav-m-hover').css('display','block');
+			},function(){
+				$('.nav-m  #nav-m-hover').css('display','none');
+			})
+			//回顶部
+			$('.back-top').click(function(){
+				$(window).scrollTop(0);
+			})
+			//滚轮回顶部图标出现
+			$(window).scroll(function(){
+				if($(window).scrollTop()<1000){
+					$('.back-top').css('display','none');
+				}else{ 
+					$('.back-top').css('display','block');
+				}
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="icon" href="img/position/favicon.ico" />
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background: #1040de;
+				position: relative;
+				/*height: 1000px;*/
+				/*overflow: overlay;*/
+			}
+			::-webkit-scrollbar{
+				width:6px;height:6px;
+				background:white;
+			}
+			::-webkit-scrollbar-thumb{
+				background-color:rgba(0,0,0,0.5);
+				border-radius:10px;
+			}
+			::-webkit-scrollbar-track{
+				background-color:transparent;
+			}
+			header{
+				height: 56px;
+			}
+			.top-pic{
+			}
+			.top-pic img{
+				width:100%;
+			}
+			.top-Box{
+				position: relative;
+			}
+			.top-Box img{
+				width: 100%;
+			}
+			.top-Box .save{
+			    width: 244px;
+			    height: 88px;
+			    background: url(lyh-img/imges/save.jpg) no-repeat center center;
+			    background-size: cover;
+			    position: absolute;
+			    left: 166px;
+			    top: 103px;
+			    z-index: 2;
+			    animation: saveMove 5s linear infinite;
+			}
+			.top-Box .cursor{
+				width: 18px;
+			    left: 323px;
+			    top: 150px;
+			    position: absolute;
+			    z-index: 3;
+			    animation: cursorMove 5s linear infinite;
+			}
+			.top-Box .rr{
+				width: 179px;
+			    height: 383px;
+			    background: url(lyh-img/imges/rr.jpg) no-repeat center center;
+			    background-size: cover;
+			    position: absolute;
+			    right: 49px;
+			    top: 77px;
+			    z-index: 2;
+			    animation: rrMove 5s linear infinite;
+			}
+			.top-Box .smile {
+			    position: absolute;
+			    z-index: 1;
+			    top: 280px;
+			    left: 125px;
+			    animation: rotate 5s linear infinite;
+			    width: 196px;
+			}
+			.marquee{
+			    position: absolute;
+			    bottom: 50px;
+			    left: 50%;
+			    margin-left: -308px;
+			    font-size: 14px;
+			    line-height: 32px;
+			    color: #fff;
+			    width: 616px;
+			    height: 32px;
+			    text-align: center;
+			}
+			.marquee marquee{
+			    background: #000;
+			    width: 616px;
+			    height: 32px;
+			}
+			#marquee-fixed{
+			  	position: fixed;
+			  	top: 0px;
+			    left: 50%;
+			    margin-left: -400px;
+			    font-size: 16px;
+			    line-height: 45px;
+			    color: #fff;
+			    width: 800px;
+			    height: 45px;
+			    text-align: center;
+			    z-index: 11;
+			    display: none;
+			}
+			#marquee-fixed marquee{
+			    background: #000;
+			    width: 800px;
+			    height: 45px;
+			}
+			.aside-left{
+			    position: fixed;
+			    left: 0;
+			    top: 50%;
+			    margin-top: -154px;
+			    z-index: 10;
+			    display: none;
+			}
+			.aside-left .navBox {
+				width: 145px;
+			}
+			.aside-left .navBox ul {
+				width:145px;
+				list-style: none;
+			}
+			.aside-left .navBox ul li a{
+				display: block;
+				text-align: left;
+				text-decoration: none;
+				width: 145px;
+				height: 50px;
+				width: 145px;
+			    line-height: 50px;
+			    padding-left: 12px;
+			    box-sizing: border-box;
+			    background: #ff5800;
+			    font-size: 20px;
+			    color: #fff;
+			    border: 1px solid #ff5800;
+		        margin-bottom: 3px;
+		        position: relative;
+			}
+			.aside-left .navBox #navBox-s span{
+				display:block;
+			    width: 69px;
+			    height: 50px;
+			    z-index: 10;
+			    float: left;
+			    margin-right: 3px;
+			    background: #ff5800;
+			    cursor: pointer;
+			    text-align: center;
+			}
+			.aside-left .navBox #navBox-s span img{
+				position: relative;
+				top: 10px;
+			}
+			.aside-left .navBox #navBox-s .erweima{
+				margin-top: 30px;
+				border-radius: 5px;
+				display: none;
+			}
+			.back-top{
+			    background-color: #ddd;
+			    background-image: url(lyh-img/imges/back-top.png);
+			    background-repeat: no-repeat;
+			    background-position: center;
+		        width: 50px;
+		        height: 50px;
+			    position: fixed;
+			    left: 50%;
+			    bottom: 34px;
+		        margin-left: 575px;
+		        z-index: 10;
+		        display: none;
+		       	border-radius: 5px;
+			}
+			.back-top:hover{
+				background-image: url(lyh-img/imges/back-top-hover.png);
+			}
+			.back-top a{
+				display: block;
+			    display: inline-block;
+			    vertical-align: middle;
+			    width: 50px;
+			    height: 50px;
+			    text-decoration: none;
+			}
+			@keyframes rotate{
+				0%{
+					transform:rotate(0deg);
+					}
+				100%{
+					transform:rotate(360deg);
+					}
+			}
+			@keyframes saveMove{
+				0%{
+					background-image: url(lyh-img/imges/save.jpg);
+				}
+				20%{
+					background-image: url(lyh-img/imges/save.jpg);
+				}
+				21%{
+					background-image: url(lyh-img/imges/savec.jpg);
+				}
+				79%{
+					background-image: url(lyh-img/imges/savec.jpg);
+				}
+				80%{
+					background-image: url(lyh-img/imges/save.jpg);
+				}
+				100%{
+					background-image: url(lyh-img/imges/save.jpg);
+				}
+			}
+			@keyframes rrMove{
+				0%{
+					background-image: url(lyh-img/imges/rr.jpg);
+				}
+				20%{
+					background-image: url(lyh-img/imges/rr.jpg);
+				}
+				21%{
+					background-image: url(lyh-img/imges/rrc.jpg);
+				}
+				79%{
+					background-image: url(lyh-img/imges/rrc.jpg);
+				}
+				80%{
+					background-image: url(lyh-img/imges/rr.jpg);
+				}
+				100%{
+					background-image: url(lyh-img/imges/rr.jpg);
+				}
+			}
+			@keyframes cursorMove{
+				0%{
+					transform:translate(50px,50px);
+				}
+				15%{
+					transform:translate(50px,50px);
+				}
+				35%{
+					transform:translate(0px,0px);
+				}
+				50%{
+					transform:translate(0px,0px);
+				}
+				65%{
+					transform:translate(0px,0px);
+				}
+				85%{
+					transform:translate(50px,50px);
+				}
+				100%{
+					transform:translate(50px,50px);
+				}
+			}
+			.top-wheel-Box{
+				width: 1014px;
+				height: 306px;
+			    background: #f00033;
+			    padding: 8px;
+			    border: 1px solid #000;
+			    overflow: hidden;
+			    position: relative;
+			    cursor: pointer;
+			    margin: 0px auto;
+			}
+			.top-wheel-Box ul{
+				width: 3072px;
+				list-style: none;
+				position: relative;
+			}
+			.top-wheel-Box ul li{
+				float: left;
+			}
+			.top-wheel-Box ul li img{
+				width: 1014px;
+				height: 305px;
+				margin-right:10px ;
+			}
+			.top-wheel-Box #top-wheel-left-but{
+				background: url(lyh-img/imges/bleft.png) no-repeat center center;
+			    width: 66px;
+			    height: 66px;
+			    position: absolute;
+			    left: 8px;
+			    top: 50%;
+			    margin-top: -33px;
+			}
+			.top-wheel-Box #top-wheel-right-but{
+			    background: url(lyh-img/imges/bright.png) no-repeat center center;
+			    width: 66px;
+			    height: 66px;
+			    right: 8px;
+			    position: absolute;
+			    top: 50%;
+			    margin-top: -33px;
+			}
+			.section-bigbox{
+				height: 7786px;
+			    background: url(lyh-img/imges/bg.jpg) repeat-y top center;
+			    background-size: 100% auto;
+			    margin-top: 30px;
+			    position: relative;
+			}
+			.section-bigbox #Grad-work{
+				width: 1160px;
+				height:1520px ;
+			    background: url(lyh-img/imges/bg1.png) no-repeat center center;
+			    /*margin-top: -69px;*/
+			    background-size: 100% 100%;
+			    margin: 0 auto;
+			    /*overflow: hidden;*/
+			}
+			.section-bigbox #Grad-work .imgesi1_1{
+			    left: -20px;
+			 	top: 116px;
+			 	position: absolute;
+			}
+			.section-bigbox #Grad-work .imgesi1_2{
+				left: -10px;
+			 	top: 300px;
+			 	position: absolute;
+			}
+			.section-bigbox #Grad-work .imgesi1_3{
+				right: 0px;
+			 	top: 140px;
+			 	position: absolute;
+			}
+			.section-bigbox #Grad-work .titles-mid {
+				width: 710px;
+				height: 280px;
+				margin: 0 auto 80px;
+				padding-top: 160px;
+				box-sizing: border-box;
+			}
+			.section-bigbox #Grad-work .titles-mid #titles-title1{
+				width: 296px;
+				height: 80px;
+				background: white;
+				text-align: center;
+				line-height: 80px;
+			    background: #fff;
+			 	color: #00bc7d;
+			 	font-size: 48px;
+			 	margin: 0 auto;
+			 	position: relative;
+			}
+			.section-bigbox #Grad-work .titles-mid #titles-title1 span{
+				position: absolute;
+			    width: 10px;
+			    background: #fff;
+			    border: 1px solid #00bc7d;
+			    display: block;
+			    height: 10px;
+			}
+			.section-bigbox  #Grad-work .titles-mid #titles-title1 span:nth-child(1){
+			    left: -5px;
+   				top: -5px;
+			}
+			.section-bigbox  #Grad-work .titles-mid #titles-title1 span:nth-child(2){
+			    right: -5px;
+  				top: -5px;
+			}
+			.section-bigbox  #Grad-work .titles-mid #titles-title1 span:nth-child(3){
+			    left: -5px;
+				bottom: -5px;
+			}
+			.section-bigbox  #Grad-work .titles-mid #titles-title1 span:nth-child(4){
+			    right: -5px;
+    			bottom: -5px;
+			}
+			.section-bigbox  #Grad-work .titles-mid #titles-title2{
+				width: 460px;
+				height: 50px;
+				color: #fff;
+			    background: #000;
+			    text-align: center;
+			    line-height: 50px;
+			    font-size: 30px;
+			    margin-top: -10px;
+			    z-index: 10;
+			    position: relative;
+			    margin-left: 280px;
+			}
+			.section-bigbox  #Grad-work .texts-mid{
+			    font-size: 20px;
+			    color: #000;
+			    text-align: center;
+			    /*margin-top: 30px;*/
+			}
+			.section-bigbox  #Grad-work .Release-but1{
+				width:230px;
+				margin: 30px auto 0px;
+				cursor: pointer;
+			}
+			.section-bigbox  #Grad-work .work-list-box{
+				width: 1160px;
+				height: 928px;
+				margin: 0 auto;
+				list-style: none;
+				padding: 30px 23px;
+				box-sizing: border-box;
+			}
+			.section-bigbox  #Grad-work .work-list-box li{
+		    	border: 5px solid #000;
+			    width: 256px;
+			    height: 192px;
+			    border-radius: 0 5px 0 0;
+			    position: relative;
+			    margin-right: 15px;
+			    margin-bottom: 15px;
+			    float: left;
+			}
+			.section-bigbox  #Grad-work .work-list-box li:nth-child(4n){
+   				 margin-right: 0;
+			}
+			.section-bigbox  #Grad-work .work-list-box li img{
+				width:100%;
+				height:100%;
+			}
+			.section-bigbox  #Grad-work .page-but{
+				width: 1160px;
+				height: 40px;
+				margin: 0 auto;
+				padding:0 396px;
+				box-sizing: border-box;
+			}
+			.section-bigbox  #Grad-work .page-but a{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			.section-bigbox  #Grad-work .page-but a:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			.section-bigbox  #Grad-work .page-but span{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			.section-bigbox  #Grad-work .page-but span:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			.section-bigbox  #Grad-Exhibition{
+				width: 1160px;
+				height:1520px ;
+			    background: url(lyh-img/imges/bg2.png) no-repeat center center;
+			    /*margin-top: -69px;*/
+			    background-size: 100% 100%;
+			    margin: 0 auto;
+			    position: relative;
+			    /*overflow:hidden;*/
+			}
+			.section-bigbox  #Grad-Exhibition .imgesi2_1{
+			    left: -124px;
+			 	top: 116px;
+			 	position: absolute;
+			 	z-index: 0;
+			}
+			.section-bigbox  #Grad-Exhibition .imgesi2_2{
+				left: -118px;
+			 	top: 300px;
+			 	position: absolute;
+			}
+			.section-bigbox #Grad-Exhibition .imgesi2_3{
+				right: -100px;
+			 	top: 140px;
+		 		position: absolute;
+			}
+			.section-bigbox #Grad-Exhibition .titles-mid {
+				width: 710px;
+				height: 280px;
+				margin: 0 auto 80px;
+				padding-top: 160px;
+				box-sizing: border-box;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title1{
+				width: 296px;
+				height: 80px;
+				background: white;
+				text-align: center;
+				line-height: 80px;
+			    background: #fff;
+			 	color: #00bc7d;
+			 	font-size: 48px;
+			 	margin: 0 auto;
+			 	position: relative;
+			 	z-index: 3;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title1 span{
+				position: absolute;
+			    width: 10px;
+			    background: #fff;
+			    border: 1px solid #00bc7d;
+			    display: block;
+			    height: 10px;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title1 span:nth-child(1){
+			    left: -5px;
+   				top: -5px;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title1 span:nth-child(2){
+			    right: -5px;
+  				top: -5px;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title1 span:nth-child(3){
+			    left: -5px;
+				bottom: -5px;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title1 span:nth-child(4){
+			    right: -5px;
+    			bottom: -5px;
+			}
+			.section-bigbox  #Grad-Exhibition .titles-mid #titles-title2{
+				width: 460px;
+				height: 50px;
+				color: #fff;
+			    background: #000;
+			    text-align: center;
+			    line-height: 50px;
+			    font-size: 30px;
+			    margin-top: -10px;
+			    z-index: 10;
+			    position: relative;
+			    margin-left: 280px;
+			}
+			.section-bigbox  #Grad-Exhibition .texts-mid{
+			    font-size: 20px;
+			    color: #000;
+			    text-align: center;
+			    /*margin-top: 30px;*/
+			}
+			.section-bigbox  #Grad-Exhibition .Release-but2{
+				width:230px;
+				margin: 30px auto 0px;
+				cursor: pointer;
+			}
+			.section-bigbox  #Grad-Exhibition .work-list-box{
+				width: 1160px;
+				height: 928px;
+				margin: 0 auto;
+				list-style: none;
+				padding: 30px 23px;
+				box-sizing: border-box;
+			}
+			.section-bigbox  #Grad-Exhibition .work-list-box li{
+		    	border: 5px solid #000;
+			    width: 256px;
+			    height: 192px;
+			    border-radius: 0 5px 0 0;
+			    position: relative;
+			    margin-right: 15px;
+			    margin-bottom: 15px;
+			    float: left;
+			}
+			.section-bigbox  #Grad-Exhibition .work-list-box li:nth-child(4n){
+   				 margin-right: 0;
+			}
+			.section-bigbox  #Grad-Exhibition .work-list-box li img{
+				width:100%;
+				height:100%;
+			}
+			.section-bigbox  #Grad-Exhibition .page-but{
+				width: 1160px;
+				height: 40px;
+				margin: 0 auto;
+				padding:0 396px;
+				box-sizing: border-box;
+			}
+			.section-bigbox  #Grad-Exhibition .page-but a{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			.section-bigbox  #Grad-Exhibition .page-but a:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			.section-bigbox  #Grad-Exhibition .page-but span{
+				float: left;
+			    display:block;
+			    font-size: 14px;
+				width: 40px;
+				height: 40px;
+			    line-height: 38px;
+			    margin: 0 3px;
+			    color: #999;
+    			border-radius: 4px;
+    			background: white;
+    			text-decoration: none;
+    			text-align: center;
+			}
+			.section-bigbox  #Grad-Exhibition .page-but span:hover{
+				color: #333333;
+				background: #FFD100;
+			}
+			.section-bigbox  #Talk-future {
+			   	width: 1160px;
+			   	height: 552px;
+			    background: #dce4ff;
+			    border: 1px solid #000;
+			    position: relative;
+			    margin: 40px auto 0;
+			}
+			.section-bigbox  #Talk-future .titles-mid #titles-title1{
+				width: 396px;
+				height: 80px;
+				text-align: center;
+				line-height: 80px;
+			 	font-size: 48px;
+			 	margin: 100px auto 0;
+			 	position: relative;
+			 	z-index: 3;
+		 	    background: #ff5800;
+			    color: #fff;
+			}
+			.section-bigbox  #Talk-future .titles-mid #titles-title1 span{
+				position: absolute;
+			    width: 10px;
+			    background: #fff;
+			    border: 1px solid #00bc7d;
+			    display: block;
+			    height: 10px;
+			}
+			.section-bigbox  #Talk-future .titles-mid #titles-title1 span:nth-child(1){
+			    left: -5px;
+   				top: -5px;
+			}
+			.section-bigbox  #Talk-future .titles-mid #titles-title1 span:nth-child(2){
+			    right: -5px;
+  				top: -5px;
+			}
+			.section-bigbox  #Talk-future .titles-mid #titles-title1 span:nth-child(3){
+			    left: -5px;
+				bottom: -5px;
+			}
+			.section-bigbox  #Talk-future .titles-mid #titles-title1 span:nth-child(4){
+			    right: -5px;
+    			bottom: -5px;
+			}
+			.section-bigbox  #Talk-future #future-wheel-box{
+				width: 1104px;
+		    	height: 230px;
+		    	/*background: salmon;*/
+		    	margin: 85px auto 60px;
+		    	/*background: 1px solid black;*/
+		    	overflow: hidden;
+			}
+			.section-bigbox  #Talk-future #future-wheel-box .future-imges-box{
+		    	width: 2232px;
+		    	position: relative;
+		    	z-index: 3;
+			}
+			.section-bigbox  #Talk-future #future-wheel-box .future-imges-box a{
+				display: block;
+				background: url(lyh-img/imges/wkbg_1.png) no-repeat center center;
+			    width: 267px;
+			    height: 230px;
+			    background-size: 100% 100%;
+			    margin-right: 12px;
+			    padding: 33px 5px 5px 5px;
+			    box-sizing: border-box;
+			    float: left;
+			}
+			.section-bigbox  #Talk-future #future-wheel-box .future-imges-box a img{
+				width: 257px;
+				height: 193px;
+			}
+			.section-bigbox  #Talk-future #future-wheel-box span{
+				position: absolute;
+				line-height: 41px;
+				text-align: center;
+				color: white;
+				font-size: 25px;
+				width: 10px;
+			    height: 41px;
+			    background-color: #ff5800;
+			    padding: 10px 6px;
+			    background-size: 74% 100%;
+			    top: 50%;
+			    margin-top: 50px;
+			}
+			.section-bigbox #Talk-future #future-wheel-box #future-wheel-left-but {
+			  	left:0px;
+			}
+			.section-bigbox #Talk-future #future-wheel-box #future-wheel-right-but {
+			    right: 0px;
+			}
+			.section-bigbox #Talk-future .imgesi3_1{
+			    left: -125px;
+				top: 0px;
+				position: absolute;
+			}
+			.section-bigbox #Talk-future .imgesi3_2{
+			    right: -100px;
+    			bottom: -140px;
+    			position: absolute;
+			}
+			.section-bigbox  #Youth-review {
+			   	width: 1160px;
+			   	height: 505px;
+			    background: #dce4ff;
+			    border: 1px solid #000;
+			    position: relative;
+			    margin: 40px auto 0;
+			}
+			.section-bigbox  #Youth-review .titles-mid #titles-title1{
+				height: 80px;
+				text-align: center;
+				line-height: 80px;
+			 	font-size: 48px;
+			 	margin: 100px auto 0;
+			 	position: relative;
+			 	z-index: 3;
+			    background: #f00031;
+			    color: #fff;
+			    width: 450px;
+			}
+			.section-bigbox  #Youth-review .titles-mid #titles-title1 span{
+			    position: absolute;
+			    width: 10px;
+			    background: #fff;
+			    border: 1px solid #f00031;
+			    display: block;
+			    height: 10px;
+			}
+			.section-bigbox  #Youth-review .titles-mid #titles-title1 span:nth-child(1){
+			    left: -5px;
+   				top: -5px;
+			}
+			.section-bigbox  #Youth-review .titles-mid #titles-title1 span:nth-child(2){
+			    right: -5px;
+  				top: -5px;
+			}
+			.section-bigbox  #Youth-review .titles-mid #titles-title1 span:nth-child(3){
+			    left: -5px;
+				bottom: -5px;
+			}
+			.section-bigbox  #Youth-review .titles-mid #titles-title1 span:nth-child(4){
+				right: -5px;
+    			bottom: -5px;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box{
+				width: 1104px;
+		    	height: 230px;
+		    	/*background: salmon;*/
+		    	margin: 85px auto 60px;
+		    	/*background: 1px solid black;*/
+		    	overflow: hidden;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box .review-imges-box{
+		    	width: 2790px;
+		    	position: relative;
+		    	z-index: 3;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box .review-imges-box a{
+				display: block;
+				background: url(lyh-img/imges/wkbg_2.png) no-repeat center center;
+			    width: 267px;
+			    height: 183px;
+			    background-size: 100% 100%;
+			    margin-right: 12px;
+			    padding: 33px 5px 5px 5px;
+			    box-sizing: border-box;
+			    float: left;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box .review-imges-box a img{
+				width: 257px;
+				height: 130px;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box span{
+				position: absolute;
+				line-height: 41px;
+				text-align: center;
+				color: white;
+				font-size: 25px;
+				width: 10px;
+			    height: 41px;
+			    background-color: #ff5800;
+			    padding: 10px 6px;
+			    background-size: 74% 100%;
+			    top: 50%;
+			    margin-top: 100px;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box #Youth-review-wheel-left-but {
+			  	left:0px;
+			}
+			.section-bigbox  #Youth-review #review-wheel-box #Youth-review-wheel-right-but {
+			    right: 0px;
+			}
+			.section-bigbox  #Youth-review .imgesi4_1{
+			    left:5px;
+				top: 5px;
+				position: absolute;
+			}
+			.section-bigbox  #Grad-poster {
+			    border: 1px solid #050001;
+			    box-sizing: border-box;
+			    background: #feed00;
+			    width: 1160px;
+			    height: 1015px;
+			    margin: 0 auto;
+			    padding: 8px 0 38px;
+			    margin-top: 40px;
+			    position: relative;
+			}
+			.section-bigbox  #Grad-poster .imgesi5_1{
+			    left:5px;
+				top: 5px;
+				position: absolute;
+			}
+			.section-bigbox  #Grad-poster .titles-mid #titles-title1{
+				height: 80px;
+				text-align: center;
+				line-height: 80px;
+			 	font-size: 48px;
+			 	margin: 100px auto 0;
+			 	position: relative;
+			 	z-index: 3;
+			    background: #282828;
+			    color: #fff;
+			    width: 450px;
+			}
+			.section-bigbox  #Grad-poster .titles-mid #titles-title1 span{
+		        position: absolute;
+			    width: 10px;
+			    background: #fff;
+			    border: 1px solid #000000;
+			    display: block;
+			    height: 10px;
+			}
+			.section-bigbox  #Grad-poster .titles-mid #titles-title1 span:nth-child(1){
+			    left: -5px;
+   				top: -5px;
+			}
+			.section-bigbox  #Grad-poster .titles-mid #titles-title1 span:nth-child(2){
+			    right: -5px;
+  				top: -5px;
+			}
+			.section-bigbox  #Grad-poster .titles-mid #titles-title1 span:nth-child(3){
+			    left: -5px;
+				bottom: -5px;
+			}
+			.section-bigbox  #Grad-poster .titles-mid #titles-title1 span:nth-child(4){
+				right: -5px;
+    			bottom: -5px;
+			}
+			.section-bigbox  #Grad-poster .texts-mid{
+			    color: #010101;
+			    line-height: 36px;
+			    margin-top: 44px;
+			    margin-bottom: 20px;
+			    text-align: center;
+			}
+			.section-bigbox  #Grad-poster .texts-mid p{
+			    font-size: 20px;
+			}
+			.section-bigbox  #Grad-poster .texts-mid span{
+			    font-size: 16px;
+			}
+			.section-bigbox  #Grad-poster #poster-wheel-box{
+				width: 900px;
+				height: 605px;
+		    	background: salmon;
+		    	margin: 25px auto 60px;
+		    	/*background: 1px solid black;*/
+		    	overflow: hidden;
+		    	/*position: relative;*/
+			}
+			.section-bigbox  #Grad-poster #poster-wheel-box .poster-wheel-ul{
+				width: 4500px;
+		    	z-index: 3;
+		    	background: salmon;
+		    	position: relative;
+		    	/*overflow: hidden;*/
+		    	transition: all 1s;
+			}
+			 #Grad-poster #poster-wheel-box hgroup #group-color{
+			 	width: 900px;
+			 	height: 605px;
+				position: relative;
+				float: left;
+			}
+			  #Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box{
+			    width: 900px;
+			    height: 605px;
+			    margin-right: 30px;
+			    background: #050001;
+			    box-sizing: border-box;
+			    padding: 15px 36px;
+			    position: relative;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic{
+			    width: 332px;
+			    border: 1px solid #feed00;
+			    position: relative;
+			    box-sizing: border-box;
+			    padding: 9px;
+			    margin-right: 36px;
+			    height: 575px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic span{
+			    display: block;
+			    width: 8px;
+			    height: 8px;
+			    box-sizing: border-box;
+			    border: 1px solid #feed00;
+			    background: #050001;
+    			position: absolute;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic span:nth-child(1){
+				left: -4px;
+				top: -4px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic span:nth-child(2){
+				right: -4px;
+				top: -4px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic span:nth-child(3){
+				right: -4px;
+				bottom: -4px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic span:nth-child(4){
+				left: -4px;
+				bottom: -4px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .poster-imges-box .poster-pic img{
+				width: 312px;
+			}
+			#Grad-poster #poster-wheel-box #poster-wheel-left-but {
+				position: absolute;
+				line-height: 57px;
+				text-align: center;
+				color: white;
+				font-size: 25px;
+			    padding: 10px 6px;
+		        width: 21px;
+			    height: 57px;
+			  	left:90px;
+			  	background: black;
+			  	top: 50%;
+			  	margin-top: 120px;
+			  	z-index: 5;
+			}
+			#Grad-poster #poster-wheel-box #poster-wheel-right-but {
+				position: absolute;
+				line-height: 57px;
+				text-align: center;
+				color: white;
+				font-size: 25px;
+			    padding: 10px 6px;
+		        width: 21px;
+			    height: 57px;
+			    right: 90px;
+			    background: black;
+			    top: 50%;
+			  	margin-top: 120px;
+			  	z-index: 5;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .wheel-text{
+				width: 420px;
+			    padding-top: 115px;
+			    color: #fff;
+			    position: absolute;
+			    top: 0px;
+			    right: 80px;
+			    height: 575px;
+			    box-sizing: border-box;
+			    /*z-index: 10px;*/
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .wheel-text p:nth-child(1){
+				display: block;
+			    font-size: 30px;
+			    font-weight: bold;
+			    line-height: 30px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .wheel-text p:nth-child(2){
+			    font-size: 20px;
+			    line-height: 34px;
+			    margin-top: 24px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .wheel-share{
+				width: 120px;
+				height: 51px;
+				position: absolute;
+				bottom: 30px;
+				right: 50%;
+				margin-right: -70px;
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .wheel-share #arrow{
+				animation: arrow 2s linear infinite;
+			}
+			@keyframes arrow{
+			    0%{
+			    	transform:translateX(0);
+			    	}
+			    50%{
+			    	transform:translateX(10px);
+			    	}
+			    100%{
+			    	transform:translateX(0);
+			    	}
+			}
+			#Grad-poster #poster-wheel-box hgroup #group-color .wheel-share p{
+		    	font-size: 20px;
+   				margin-top: -5px;
+   				color: #FFFFFF;
+			}
+			.section-bigbox  #Grad-feeling{
+				width: 1160px;
+			    background: #dce4ff;
+			    border: 1px solid #000;
+			    position: relative;
+			    margin: 40px auto 0;
+			}
+			.section-bigbox  #Grad-feeling .imgesi6_1{
+			    left:5px;
+				top: 5px;
+				position: absolute;
+			}
+			.section-bigbox  #Grad-feeling .titles-mid #titles-title1{
+				height: 80px;
+				text-align: center;
+				line-height: 80px;
+			 	font-size: 48px;
+			 	margin: 100px auto 80px;
+			 	position: relative;
+			 	z-index: 3;
+			    color: #fff;
+		        background: #f00031;
+			    width: 450px;
+			}
+			.section-bigbox  #Grad-feeling .titles-mid #titles-title1 span{
+		        position: absolute;
+			    width: 10px;
+			    background: #fff;
+			    border: 1px solid #000000;
+			    display: block;
+			    height: 10px;
+			}
+			.section-bigbox  #Grad-feeling .titles-mid #titles-title1 span:nth-child(1){
+			    left: -5px;
+   				top: -5px;
+			}
+			.section-bigbox  #Grad-feeling .titles-mid #titles-title1 span:nth-child(2){
+			    right: -5px;
+  				top: -5px;
+			}
+			.section-bigbox  #Grad-feeling .titles-mid #titles-title1 span:nth-child(3){
+			    left: -5px;
+				bottom: -5px;
+			}
+			.section-bigbox  #Grad-feeling .titles-mid #titles-title1 span:nth-child(4){
+				right: -5px;
+    			bottom: -5px;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r{
+				width:1160px;
+				height: 1700px;
+				background: white;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-top {
+				width: 100%;
+				padding: 30px;
+				height: 150px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #EEEEEE;
+				position: relative;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-top input{
+				width: 100%;
+				height: 40px;
+			    color: #666;
+			    font-size: 14px;
+			    border: 1px solid #ddd;
+   				padding:10px 50px 10px 20px;
+   				box-sizing: border-box;
+			    background: #f4f4f4;
+			    border-radius: 5px;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-top figure{
+				width: 100%;
+				height: 38px;
+				margin-top: 10px;
+				position: relative;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-top figure p{
+				position: absolute;
+				left: 40px;
+			    color: #666;
+			    font-size: 10px;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-top a{
+				display: block;
+				color: #bbb;
+			    width: 100px;
+			    height: 36px;
+			    line-height: 36px;
+			    background: #eee;
+			    border: 1px solid #eee;
+			    border-radius: 4px;
+			    font-size: 14px;
+			    padding: 0 20px;
+			    box-sizing: border-box;
+			    position: absolute;
+			    right: 0px;
+			    text-decoration: none;
+			    text-align: center;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-bottom{
+				width: 100%;
+				padding-top: 30px;
+			}    
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-bottom .leave-message{
+				padding: 0 30px;
+			    color: #282828;
+			    box-sizing: border-box;
+			    font-size: 14px;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-bottom p span{
+			    color: #bbb;
+			    margin-left: 10px;
+			}
+			.section-bigbox  #Grad-feeling .visitor-r #visitor-r-bottom ul{
+				width: 100%;
+				padding:0 30px;
+				box-sizing: border-box;
+				list-style: none;
+			}
+			#Grad-feeling .visitor-r #visitor-r-bottom ul li {
+				width: 100%;
+				height: 136px;
+				position: relative;
+			}
+			#Grad-feeling .visitor-r #visitor-r-bottom ul li .header-box2{
+				display: block;
+				overflow: hidden;
+				width: 48px;
+				height: 48px;
+				border-radius: 24px;
+				position: absolute;
+				top: 30px;
+			}
+			.visitor-r #visitor-r-bottom ul li a img{
+				width: 48px;
+				height: 48px;
+				/*position: absolute;*/
+			}
+			.visitor-r #visitor-r-bottom ul li figure{
+				width: 760px;
+				height: 136px;
+				float: left;
+				box-sizing: border-box;
+				position: relative;
+				padding: 30px 0px 30px 68px;
+				border-bottom: 1px solid #F1F1F1;
+			}
+			.visitor-r #visitor-r-bottom ul li figure a{
+			    font-weight: 800;
+		        color: #282828;
+           		margin-right: 20px;
+           		position: relative;
+           		text-decoration: none;
+           		font-size: 14px;
+			}
+			.visitor-r #visitor-r-bottom ul li figure span{
+				color: #bbb;
+				margin-right: 10px;
+				font-size: 14px;
+			}
+			.visitor-r #visitor-r-bottom ul li figure p{
+				margin-top: 8px;
+			    line-height: 24px;
+			    font-size: 14px;
+			    word-break: break-word;
+		        color: #666;
+			}
+			.footer-bg-pic img{
+				width: 100%;
+			}
+			 footer .footer1{
+				margin-top: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="lyh-img/img/menu.png" class="menu"/>
+			<div class="menus">
+				<p class="li"><a href="index.html">首页</a><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+				<p class="li"><a href="index5.html">发现</a></p>
+					<p class="li1"><a href="">平面</a></p>
+					<p class="li1"><a href="">UI</a></p>
+					<p class="li1"><a href="">插画</a></p>
+					<p class="li1"><a href="">动漫</a></p>
+					<p class="li1"><a href="">摄影</a></p>
+					<p class="li1"><a href="">空间</a></p>
+					<p class="li1"><a href="">工业/产品</a></p>
+					<p class="li1"><a href="">三维</a></p>
+					<p class="li1"><a href="">手工艺</a></p>
+					<p class="li1"><a href="">纯艺术</a></p>
+					<p class="li1"><a href="">服装</a></p>
+					<p class="li1"><a href="">其他</a></p>
+					<p class="li1"><a href="">精选作品</a></p>
+					<p class="li1"><a href="">精选文章</a></p>
+					<p class="li1"><a href="">精选收藏</a></p>
+				<p class="li"><a href="pzk1.html">同城</a></p>
+				<p class="li"><a href="position.html">职位</a></p>
+					<p class="lis"><a href="">职位</a></p>
+					<p class="lis"><a href="">公司</a></p>
+					<p class="lis"><a href="">+发布职位</a></p>
+				<p class="li"><a href="pzk2.html">活动</a></p>
+					<p class="lis"><a href="">设计大赛</a></p>
+					<p class="lis"><a href="">公司专题策划</a></p>
+					<p class="lis"><a href="">线上活动</a></p>
+					<p class="lis"><a href="">线下活动</a></p>
+					<p class="lis"><a href="">需为吸引瓶</a></p>
+				<p class="li"><a href="index3.html">正版素材</a></p>
+					<p class="lis"><a href="index3.html">图片</a></p>
+					<p class="lis"><a href="">视频</a></p>
+					<p class="lis"><a href="index4.html">字体</a></p>
+					<p class="lis"><a href="">音乐</a></p>
+				<p class="li"><a href="course.html" target="_blank">课程</a></p>
+					<p class="lis"><a href="">正在热销</a></p>
+					<p class="lis"><a href="">口碑好课</a></p>
+				<p class="li"><a href="">...</a></p>	
+					<p class="lis"><a href="榜单.html">榜单</a></p>
+					<p class="lis"><a href="设计师2.html">设计师</a></p>
+					<p class="lis"><a href="站酷APP.html">站酷APP</a></p>
+					<p class="lis"><a href="字体库.html">站酷字体</a></p>
+			</div>
+			<img src="img/logo.svg" class="pull-left logo"/>
+			<nav class="pull-left">
+				<ul class="nav pull-left clearfix">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="index5.html">发现</a>
+						<div class="fx">
+							<div class="top">
+								<div><a href="">平面</a><span>|</span></div>	
+								<div><a href="">UI</a><span>|</span></div>	
+								<div><a href="">网页</a><span>|</span></div>	
+								<div><a href="">插画</a><span>|</span></div>	
+								<div><a href="">动漫</a><span>|</span></div>	
+								<div><a href="">摄影</a><span>|</span></div>	
+								<div><a href="">空间</a><span>|</span></div>	
+								<div><a href="">工业/产品</a><span>|</span></div>	
+								<div><a href="">三维</a><span>|</span></div>	
+								<div><a href="">影视</a><span>|</span></div>	
+								<div><a href="">手工艺</a><span>|</span></div>	
+								<div><a href="">纯艺术</a><span>|</span></div>	
+								<div><a href="">服装</a><span>|</span></div>	
+								<div><a href="">其他</a><span>|</span></div>	
+											
+							</div>
+							<hr/>
+							<div class="bottom">
+								<a href="">精选作品&nbsp;></a>
+								<a href="">精选文章&nbsp;></a>
+								<a href="">精选收藏&nbsp;></a>
+							</div>
+						</div>
+					
+					</li>
+					<li><a href="pzk1.html">同城</a></li>
+					<li>
+						<a href="position.html">职位</a>
+						<div class="zw">
+							<p><a href="">职位</a></p>
+							<p><a href="">公司</a></p>
+							<p><a href="">+发布职位</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="pzk2.html">活动</a>
+						<div class="zw">
+							<p><a href="">设计大赛</a></p>
+							<p><a href="">公司专题策划</a></p>
+							<p><a href="">线上活动</a></p>
+							<p><a href="">线下活动</a></p>
+							<p><a href="">学习音频</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="index3.html">正版素材</a>
+						<div class="zw">
+							<p><a href="index3.html">图片</a></p>	
+							<p><a href="">视频</a></p>
+							<p><a href="index4.html">字体</a></p>
+							<p><a href="">音乐</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="course.html" target="_blank">课程</a>
+						<div class="zw">
+							<p><a href="">正在热销</a></p>
+							<p><a href="">口碑好课</a></p>
+						</div>
+					</li>
+					<li>
+						<a href=""></a>
+						<div class="zw">
+							<p><a href="榜单.html">榜单</a></p>
+							<p><a href="设计师2.html">设计师</a></p>
+							<p><a href="站酷APP.html">站酷APP</a></p>
+							<p><a href="字体库.html">站酷字库</a></p>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<span><a href="">登录</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="">注册</a></span>
+			<div class="search">
+				<div class="search_top">
+					<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<input type="text" name="" id="" />
+					<img src="lyh-img/img/seach.svg"/>
+				</div>
+				<div class="search_bot">
+					<div class="search1">热门搜索</div>
+					<div class="search2">2019毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">2018毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">我是毕业生</div>
+				</div>
+			</div>
+		</header>
+		<div id="marquee-fixed">
+			<marquee behavior="" direction="">
+				#2019 #青春答卷终于上线了 #🌪🌪🌪 #跨入未来 #NEW FACE #🙂🙂🙂 #来来来，毕设作品传起来 #⭐️⭐️⭐️ #DESIGNERS
+			</marquee>
+		</div>
+		<aside class="aside-left">
+			<div class="navBox">
+				<ul>
+					<li><a href="#Grad-work">毕设作品</a></li>
+					<li><a href="#Grad-Exhibition">毕业展报道</a></li>
+					<li><a href="#Talk-future">毕业生采访</a></li>
+					<li><a href="#Grad-feeling">毕业感言</a></li>
+					<li><a href="#Grad-poster">毕业专属海报</a></li>
+				</ul>
+				<div id="navBox-s">
+				<span class="share-wechat"><img src="lyh-img/imges/wechat.png"/></span>
+				<span><img src="lyh-img/imges/weibo.png"/></span>
+				<img class="erweima" src="lyh-img/imges/aside-erweima.png"/>
+				</div>
+			</div>
+		</aside>
+		<aside class="back-top">
+			<a href="javascript:void(0);"></a>
+		</aside>
+		<div class="top-pic">
+			<img src="lyh-img/imges/topbar.jpg"/>
+		</div>
+		<div class="top-Box">
+			<img src="lyh-img/imges/banner.jpg" alt="" />
+			<img class="cursor" src="lyh-img/imges/cursor.png"/>
+			<figure class="save">
+			</figure>
+			<figure class="rr">
+			</figure>
+			<img class="smile" src="lyh-img/imges/ty.png"/>
+			<figure class="marquee">
+				<marquee behavior="" direction="">
+					#2019 #青春答卷终于上线了 #🌪🌪🌪 #跨入未来 #NEW FACE #🙂🙂🙂 #来来来，毕设作品传起来 #⭐️⭐️⭐️ #DESIGNERS
+				</marquee>
+			</figure>
+		</div>
+		<div class="top-wheel-Box">
+			<ul>
+				<li><img src="lyh-img/imges/banner2.jpg"/></li>
+				<li><img src="lyh-img/imges/banner3.jpg"/></li>
+				<li><img src="lyh-img/imges/banner4.jpg"/></li>
+			</ul>
+			<div id="top-wheel-left-but"></div>
+			<div id="top-wheel-right-but"></div>
+			
+		</div>
+		<section class="section-bigbox">
+			<figure id="Grad-work">
+				<div class="titles-mid">
+					<div id="titles-title1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						毕设作品
+					</div>
+					<div id="titles-title2">
+						“4年了，是时候看看我的作品了”
+					</div>
+				</div>
+				<div class="texts-mid">
+					上传毕设作品，让你的作品获得更多关注<br />
+					#2019青春答卷#+标题，发表原创作品即可参与<br />
+					示例：#2019青春答卷#<毕业作品名称>
+				</div>
+				<div class="Release-but1">
+					<img src="lyh-img/imges/btn1.png"/>
+				</div>
+				<ul class="work-list-box">
+					<li><img src="lyh-img/imges/work-pic1.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic2.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic3.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic4.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic5.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic6.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic7.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic8.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic9.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic10.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic11.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic12.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic13.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic14.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic15.jpg"/></li>
+					<li><img src="lyh-img/imges/work-pic16.jpg"/></li>
+				</ul>
+				<div class="page-but">
+					<span>1</span>
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">4</a>
+					<a href="">5</a>
+					<span>...</span>
+					<a href="">尾页</a>
+					<a href="">></a>
+				</div>
+				<div class="imgesi1_1">
+					<img src="lyh-img/imges/i1_1.png"/>
+				</div>
+				<div class="imgesi1_2">
+					<img src="lyh-img/imges/i1_2.png"/>
+				</div>
+				<div class="imgesi1_3">
+					<img src="lyh-img/imges/i1_3.png"/>
+				</div>
+			</figure>
+			<figure id="Grad-Exhibition">
+				<div class="titles-mid">
+					<div id="titles-title1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						毕业展报道
+					</div>
+					<div id="titles-title2">
+						“今年的毕业展，期待很久了”
+					</div>
+				</div>
+				<div class="texts-mid">
+					这里是站酷志愿者们用镜头从各大高校现场发回的毕业展报道，<br />
+					#2019毕业展＃＋举办院校，<br />
+					从作品入口上传即可发布报道
+				</div>
+				<div class="Release-but2">
+					<img src="lyh-img/imges/btn2.png"/>
+				</div>
+				<ul class="work-list-box">
+					<li><img src="lyh-img/imges/report-pic1.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic2.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic3.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic4.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic5.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic6.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic7.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic8.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic9.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic10.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic11.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic12.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic13.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic14.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic15.jpg"/></li>
+					<li><img src="lyh-img/imges/report-pic16.jpg"/></li>
+				</ul>
+				<div class="page-but">
+					<span>1</span>
+					<a href="">2</a>
+					<a href="">3</a>
+					<a href="">4</a>
+					<a href="">5</a>
+					<span>...</span>
+					<a href="">尾页</a>
+					<a href="">></a>
+				</div>
+				<div class="imgesi2_1">
+					<img src="lyh-img/imges/i2_1.png"/>
+				</div>
+				<div class="imgesi2_2">
+					<img src="lyh-img/imges/i2_2.png"/>
+				</div>
+				<div class="imgesi2_3">
+					<img src="lyh-img/imges/i2_3.png"/>
+				</div>
+			</figure>
+			<figure id="Talk-future">
+				<div class="titles-mid">
+					<div id="titles-title1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						对话未来设计师
+					</div>
+				</div>
+				<section id="future-wheel-box">
+					<div class="future-imges-box">
+						<a href=""><img src="lyh-img/imges/future-pic1.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic2.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic3.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic4.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic5.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic1.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic2.jpg"/></a>
+						<a href=""><img src="lyh-img/imges/future-pic3.jpg"/></a>
+					</div>
+					<span id="future-wheel-left-but">‹</span>
+					<span id="future-wheel-right-but">›</span>
+				</section>
+				<div class="imgesi3_1">
+					<img src="lyh-img/imges/i3_1.png"/>
+				</div>
+				<div class="imgesi3_2">
+					<img src="lyh-img/imges/i3_2.png"/>
+				</div>
+			</figure>
+			<figure id="Youth-review">
+				<div class="titles-mid">
+					<div id="titles-title1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						青春答卷专题回顾
+					</div>
+				</div>
+				<section id="review-wheel-box">
+					<div class="review-imges-box">
+						<a href=""><img src="lyh-img/imges/review2012.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2013.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2014.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2015.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2016.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2017.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2018.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2012.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2013.png"/></a>
+						<a href=""><img src="lyh-img/imges/review2014.png"/></a>
+					</div>
+					<span id="Youth-review-wheel-left-but">‹</span>
+					<span id="Youth-review-wheel-right-but">›</span>
+				</section>
+				<div class="imgesi4_1">
+					<img src="lyh-img/imges/i4_1.png"/>
+				</div>
+			</figure>
+			<figure id="Grad-poster">
+				<div class="imgesi5_1">
+					<img src="lyh-img/imges/i5_1.png"/>
+				</div>
+				<div class="titles-mid">
+					<div id="titles-title1">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						毕业专属海报
+					</div>
+				</div>
+				<div class="texts-mid">
+					<p>希望新一代未来设计师能够拥有全新的面貌</p>
+					<p>在未来保持：设计独立、包容偏差、回归文化、创造经典、拥抱变化</p>
+					<span>点击右键保存海报，分享到朋友圈吧！</span>
+				</div>
+				<section id="poster-wheel-box">
+					<span id="poster-wheel-left-but">‹</span>
+					<span id="poster-wheel-right-but">›</span>
+					<hgroup class="poster-wheel-ul">
+						<hgroup id="group-color">
+							<div class="poster-imges-box">
+								<aside class="poster-pic">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<img src="lyh-img/imges/poster-pic1.jpg"/>
+								</aside>
+							</div>
+							<div class="wheel-text">
+								<p>设计独立<br />Independence</p>
+								<p>信息大爆炸早就成了我们当下时代的标签，我们每天都在接收这个世界万千复杂的文字、图像、影像等信息，巨流之下，要保持设计独立、十分之难，但保持设计独立，十分难能可贵。</p>
+							</div>
+							<div class="wheel-share">
+								<div id="arrow">
+									<img src="lyh-img/imges/specjt.png"/>
+								</div>
+								<p>右键另存分享</p>
+							</div>
+						</hgroup>
+						<hgroup id="group-color">
+							<div class="poster-imges-box">
+								<aside class="poster-pic">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<img src="lyh-img/imges/poster-pic2.jpg"/>
+								</aside>
+							</div>
+							<div class="wheel-text">
+								<p>包容偏差<br />Magnanimity</p>
+								<p>设计独立智商，我们应该打破局限，包容不同的理念、不同的审美、不同的表达形式</p>
+							</div>
+							<div class="wheel-share">
+								<div id="arrow">
+									<img src="lyh-img/imges/specjt.png"/>
+								</div>
+								<p>右键另存分享</p>
+							</div>
+						</hgroup>
+						<hgroup id="group-color">
+							<div class="poster-imges-box">
+								<aside class="poster-pic">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<img src="lyh-img/imges/poster-pic3.jpg"/>
+								</aside>
+							</div>
+							<div class="wheel-text">
+								<p>回归文化<br />confidence</p>
+								<p>如果说设计独立针对的是个体、回归文化针对的就是中国设计群体。越是全球化，越要沉淀和回归“自我”文化，找到文化自信，相信这是新时代的需要</p>
+							</div>
+							<div class="wheel-share">
+								<div id="arrow">
+									<img src="lyh-img/imges/specjt.png"/>
+								</div>
+								<p>右键另存分享</p>
+							</div>
+						</hgroup>
+						<hgroup id="group-color">
+							<div class="poster-imges-box">
+								<aside class="poster-pic">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<img src="lyh-img/imges/poster-pic4.jpg"/>
+								</aside>
+							</div>
+							<div class="wheel-text">
+								<p>创造经典<br />Original</p>
+								<p>只有回归文化母体，才能在下一个时代创造经典</p>
+							</div>
+							<div class="wheel-share">
+								<div id="arrow">
+									<img src="lyh-img/imges/specjt.png"/>
+								</div>
+								<p>右键另存分享</p>
+							</div>
+						</hgroup>
+						<hgroup id="group-color">
+							<div class="poster-imges-box">
+								<aside class="poster-pic">
+									<span></span>
+									<span></span>
+									<span></span>
+									<span></span>
+									<img src="lyh-img/imges/poster-pic5.jpg"/>
+								</aside>
+							</div>
+							<div class="wheel-text">
+								<p>拥抱变化<br />Progress</p>
+								<p>未来不一定是未知的，但未来一定是变化的。设计技术，设计工具，设计方式在变，设计需求、设计方向、设计形式在变。拥抱变化，与时俱进，在变化中寻找自我价值</p>
+							</div>
+							<div class="wheel-share">
+								<div id="arrow">
+									<img src="lyh-img/imges/specjt.png"/>
+								</div>
+								<p>右键另存分享</p>
+							</div>
+						</hgroup>
+					</hgroup>
+				</section>
+			</figure>
+			<figure id="Grad-feeling">
+				<div class="imgesi6_1">
+					<img src="lyh-img/imges/i6_1.png"/>
+				</div>
+				<div class="titles-mid">
+				<div id="titles-title1">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					毕业感言
+				</div>
+				<div class="visitor-r">
+					<div id="visitor-r-top">
+						<input type="" name="" id="" value="" />
+						<figure>
+							<p>添加表情 </p>
+							<a href="">评论</a>
+						</figure>
+					</div>
+					<div id="visitor-r-bottom">
+						<p class="leave-message">全部留言<span>2332</span></p>
+						<ul>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>快点更新啊！！！</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>不知道自己爱不爱这行，目前只想好好做这行。</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>2012年毕业的我，当过安装工学徒、贸易公司平面设计兼网管，网店美工，网页设计。。。兜兜转转好像工作了7年，实际感觉还在原地踏步</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>不知道自己爱不爱这行，目前只想好好做这行。</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>不知道自己爱不爱这行，目前只想好好做这行。</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>2012年毕业的我，当过安装工学徒、贸易公司平面设计兼网管，网店美工，网页设计。。。兜兜转转好像工作了7年，实际感觉还在原地踏步</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>2012年毕业的我，当过安装工学徒、贸易公司平面设计兼网管，网店美工，网页设计。。。兜兜转转好像工作了7年，实际感觉还在原地踏步</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>不知道自己爱不爱这行，目前只想好好做这行。</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>不知道自己爱不爱这行，目前只想好好做这行。</p>
+								</figure>
+							</li>
+							<li>
+								<a  class="header-box2" href=""><img class="" src="lyh-img/img/header2.jpg"/></a>
+								<figure>
+									<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+									<p>2012年毕业的我，当过安装工学徒、贸易公司平面设计兼网管，网店美工，网页设计。。。兜兜转转好像工作了7年，实际感觉还在原地踏步</p>
+								</figure>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</figure>
+		</section>
+		<div class="footer-bg-pic">
+			<img src="lyh-img/imges/fooerbg.png" alt="" />
+		</div>
+		<footer class="footer_B">
+			<div class="footer1">
+				<div class="footer_wrap container">
+					<div class="footer_wrap1">         
+						<a href=""><span><img src="lyh-img/img/app.svg"/></span><img src="lyh-img/img/ewm.png"/>移动版</a>
+						<a href="">关于我们</a>
+						<a href="">加入站酷</a>
+						<a href="">用户协议</a>
+						<a href="">隐私政策</a>
+						<a href="">侵权申诉</a>
+						<a href="">企业服务</a>
+						<a href="">帮助中心</a>
+						<a href="">联系我们</a>
+						<a href="">中文</a>
+						<a href="">English</a>
+					</div>
+					<div class="footer_wrap2">
+						<a href=""><img src="lyh-img/img/ewm2.jpg"/></a>
+						<a href=""></a>
+					</div>
+				</div>
+				<div class="footer_tap container">						     
+					<p>
+					<a href="">京ICP备11017824号-4</a>
+					<span>|</span>
+					<a href="">京ICP证130164号</a>
+					<span>|</span>
+					<a href="">京公网安备11010502000501号</a>
+					<span>|</span>
+					<a href=""> 网络文化经营许可证 京网文[2016]6173-844号</a>
+					<span>|</span>
+					<a href="">广播电视节目制作经营许可证（京）字第06990号</a>
+					</p>
+					<p>
+					<a href="">营业执照</a>
+					<span>|</span>
+					<a href="">网上有害信息举报专区</a>
+					<span>|</span>
+					<a href="">不良信息举报电话：010-56538658</a>
+					<span>|</span>
+					<a href=""> 举报邮箱 jubao@zcool.com.cn</a>
+					<span>|</span>
+					<a href="">联系电话：010-56538600</a>
+					<span>|</span>
+					<a href="">Copyright © 2006-2019 ZCOOL站酷</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script>
+			//移入移出侧边导航栏
+			$('.navBox ul li a').hover(function(){
+				$(this).css({'background':'#0838E4','left':'15px','border':'1px solid #FF5800'}).siblings().css({'background':'#FF5800','left':'0px','border':'1px solid #FF5800'});
+			},function(){
+				$(this).css({'background':'#FF5800','left':'0px','border':'1px solid #FF5800'});
+			})
+			//移入弹出二维码
+			$('.share-wechat').hover(function(){
+				$('.erweima').css('display','block');
+			},function(){
+				$('.erweima').css('display','none');
+			})
+			//左侧边导航栏点击变色
+			$('.navBox ul li a').click(function(){
+				$(this).css({'background':'#0838E4','left':'15px','border':'1px solid #FF5800'}).siblings().css({'background':'#FF5800','left':'0px','border':'1px solid #FF5800'});
+			})
+			//左侧边导航栏点击跳入指定页面
+			//滚轮滚动条事件
+			$(window).scroll(function(){
+				if ($(window).scrollTop()<604) {
+					$('#marquee-fixed').css('display','none');
+				}else{
+					$('#marquee-fixed').css('display','block');
+				}
+			})
+			$(window).scroll(function(){
+				if($(window).scrollTop()<300){
+					$('.aside-left').css('display','none');
+				}else{ 
+					$('.aside-left').css('display','block');
+				}
+			})
+			//右侧边导航栏点击回顶部
+			$('.back-top').click(function(){
+				$(window).scrollTop(0);
+			})
+			//右侧滚轮事件
+			$(window).scroll(function(){
+				if ($(window).scrollTop()<650) {
+					$('.back-top').css('display','none');
+				}else{
+					$('.back-top').css('display','block');
+				}
+			})
+			var i=0;
+			//顶部轮播图左右按钮
+			$('#top-wheel-left-but').click(function(){
+				i++;
+				if(i==3){
+					i=0;
+				}
+				$('.top-wheel-Box ul').css('left',-1024*i+'px');
+			})
+			$('#top-wheel-right-but').click(function(){
+				i--;
+				if(i==-1){
+					i=2;
+				}
+				$('.top-wheel-Box ul').css('left',-1024*i+'px');
+			})
+			//发布我的作品按钮移入移出
+			$('.Release-but1').hover(function(){
+				$('.Release-but1 img').attr('src','lyh-img/imges/btn1.hover.png');
+			},function(){
+				$('.Release-but1 img').attr('src','lyh-img/imges/btn1.png');
+			})
+			//发布我的报道按钮移入移出
+			$('.Release-but2').hover(function(){
+				$('.Release-but2 img').attr('src','lyh-img/imges/btn2.hover.png');
+			},function(){
+				$('.Release-but2 img').attr('src','lyh-img/imges/btn2.png');
+			})
+			//对话未来轮播图左右按钮
+			$('#future-wheel-left-but').click(function(){
+				i--;
+				if(i==-1){
+					i=4;
+				}
+				$('.future-imges-box').css('left',-279*i+'px');
+			})
+			$('#future-wheel-right-but').click(function(){
+				i++;
+				if(i==5){
+					i=0;
+				}
+				$('.future-imges-box').css('left',-279*i+'px');
+			})
+			//回顾青春轮播图定时器
+			var timer;
+			timer=setInterval(function(){
+				i++;
+				if(i==7){
+					i=0;
+				}
+				$('.review-imges-box').css('left',-279*i+'px');
+			},3000);
+			//移入青春轮播图清除定时器
+			//移入青春轮播图恢复定时器
+			$('#review-wheel-box').hover(function(){
+				clearInterval(timer);
+			},function(){
+				clearInterval(timer);
+				setInterval(function(){
+				i++;
+				if(i==7){
+					i=0;
+				}
+				$('.review-imges-box').css('left',-279*i+'px');
+			},3000);
+			})
+			//回顾青春轮播图左右按钮
+			$('.review-imges-box').css('left',-279*i+'px');
+			$('#Youth-review-wheel-left-but').click(function(){
+				clearInterval(timer);
+				i--;
+				if(i==-1){
+					i=6;
+				}
+				$('.review-imges-box').css('left',-279*i+'px');
+			})
+			$('#Youth-review-wheel-right-but').click(function(){
+				clearInterval(timer);
+				i++;
+				if(i==7){
+					i=0;
+				}
+				$('.review-imges-box').css('left',-279*i+'px');
+			})
+			//毕业海报轮播图左右按钮
+			$('.poster-wheel-ul').css('left',-900*i+'px');
+			$('#poster-wheel-left-but').click(function(){
+				i--;
+				if(i==-1){
+					i=4;
+				}
+				$('.poster-wheel-ul').css('left',-900*i+'px');
+			})
+			$('#poster-wheel-right-but').click(function(){
+				i++;
+				if(i==5){
+					i=0;
+				}
+				$('.poster-wheel-ul').css('left',-900*i+'px');
+			})
+		</script>
+	</body>
+</html>

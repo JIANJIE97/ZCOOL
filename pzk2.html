@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/jquery-3.3.1.js" type="text/javascript" charset="utf-8"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min1.css"/>
+		<link rel="icon" href="img/position/favicon.ico" />
+		<!--<script src="js/bootstrap.js"></script>-->
+		<script src="js/jquery-3.3.1.js"></script>
+		
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				background: #f4f4f4;
+			}
+			ul{
+				list-style: none;
+			}
+			a{
+				text-decoration: none;
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			header{
+					width: 100%;
+					height: 56px;
+					background: #ffe300;
+					position: relative;
+				}
+				
+				
+				.menu{
+					display: none;
+					cursor: pointer;
+					float: left;
+					position:relative;
+					z-index: 10;
+					left: 10px;
+					top: 15px;
+					width: 20px;
+					height: 20px;
+				}
+				.menus .li button{
+					font-weight: 1;
+					position: absolute;
+					top:2px;
+					right: 20px;
+					font-size: 40px;
+				}
+				.menus{
+					display: none;
+					width: 300px;
+					height: 500px;
+					position: absolute;
+					left: 0;
+					z-index: 20;
+					background: yellow;
+					overflow: auto;
+				}
+				.menu1{
+					display: inline-block;
+				}
+				.menus p{
+					margin: 0;
+				}
+				.menus p a{
+					color: #000;
+					display: inline-block;
+					width: 100%;
+					height: 100%;
+				}
+				.menus p a:hover{
+					background: #F2F2F2;
+				}
+				.menus .li a{
+					position: relative;
+					padding-left: 30px;
+					background: #fff;
+					height: 50px;
+					line-height: 50px;
+					font-size: 18px;
+				}
+				.menus .li1 a{
+					padding-left: 50px;
+					background: #fff;
+					height: 40px;
+					line-height: 40px;
+				}
+				.menus .lis a{
+					padding-left: 50px;
+					background: #fff;
+					height: 35px;
+					line-height: 35px;
+				}
+				@media(min-width:980px ){
+					.menus{
+						display: none;
+					}
+				}
+				.logo{
+					width: 8%;
+					margin-left: 4%;
+					position: relative;
+					top: 50%;
+					margin-top: -8px;
+				}
+				header nav{
+					width: 46%;
+					height: 56px;
+					margin-left: 13%;
+				}
+				header nav .nav{
+					width: 100%;
+				}
+				header nav .nav>li{
+					position: relative;
+					list-style: none;
+					float: left;
+					width: 12.5%;
+					height: 56px;
+					text-align: center;
+					line-height: 56px;
+					
+				}
+				
+				header nav .nav>li:first-child{
+					color: black;
+					font-weight: bold;
+				}
+				header nav .nav>li img{
+					width: 30%;
+				}
+				header nav .nav>li:last-child>a{
+					display: inline-block;
+					width: 33%;
+					height: 56px;
+					background: url(img/pan2/。。。.svg) no-repeat;
+					background-position: center;
+				}
+				header nav .nav>li:last-child:hover>a{
+					background: url(img/pan2/。。。1.svg) no-repeat;
+					background-position: center;
+				}
+				header nav .nav>li a{
+					color: black;
+					padding: 0;
+				}
+				header nav .nav>li:hover{
+					background: #282828;
+					cursor:pointer;
+				}
+				header nav .nav>li:hover>a{
+						color: #ffe300;
+				}
+				@media(max-width:980px ) {
+					.menu{
+						display: block;
+					}
+					header nav {
+						display: none;
+					}	
+				}
+				header .log{
+					width: 68px;
+					float: left;
+					height: 56px;
+					margin-left: 3%;
+				}
+				header .log:nth-of-type(3){
+					margin-left: 0%;
+				}
+				header .log a{
+					position: relative;
+					width: 28px;
+					height: 30px;
+					display: inline-block;
+					margin-top: 18px;
+					margin-left: 37%;
+				}
+				header .log:nth-of-type(2) a{
+					background: url(img/pan2/seach.svg) no-repeat;
+					background-size: 20px;	
+				}
+				header .log:nth-of-type(3) a{
+					background: url(img/pan2/cloud.svg) no-repeat;
+					background-size: 20px;
+				}
+				header .log:hover{
+					background:#282828 ;
+				}
+				header .log:nth-of-type(2):hover>a{
+					background: url(img/pan2/seach1.svg) no-repeat;
+					background-size: 20px;	
+				}
+				header .log:nth-of-type(3):hover>a{
+					background: url(img/pan2/cloud1.svg) no-repeat;
+					background-size: 20px;
+				}
+				@media(max-width:980px ) {
+					header .log{
+						margin-left: 40%;
+					}
+				}
+				
+				header>span{
+					display: inline-block;
+					height: 56px;
+					/*width: 5%;*/
+					margin-left: 2%;
+					line-height: 56px;
+					
+				}
+				header span a{
+					color: black;
+				}	
+				header span a:hover{
+					text-decoration: none;
+					color: black;
+				}
+				
+				header nav .nav li .fx{
+					position: absolute;
+					z-index: 10;
+					top: 56px;
+					left: 0;
+					width: 900%;
+					box-sizing: border-box;
+					padding: 0px 4.5%;
+					background: #fff;
+					display: none;
+					border-radius: 5px;
+					
+				}
+				header nav .nav .fx .top{
+					overflow: hidden;
+					margin-top: 10px;
+				}
+				header nav .nav .fx .top div{
+					float: left;
+					width:13% ;
+					height: 28px;
+					line-height: normal;
+				}
+				header nav .nav .fx .top div:nth-of-type(1),header nav .nav .fx div:nth-of-type(8){
+					margin-left: 15px;
+				}
+				header nav .nav .fx .top div a{
+					color: #333;
+					display: inline-block;
+					height: 24px;
+					width: 70%;
+					line-height: 28px;
+					margin-top: 5px;
+					border-radius: 4px;
+					line-height: 24px;
+				}
+				header nav .nav .fx .top div span{
+					position: relative;
+					top:-2px;
+					display: inline-block;
+					height: 28px;
+					width: 30%;
+					text-align: center;
+					
+				}
+				header nav .nav .fx .top div a:hover{
+					background:#ffe300 ;
+					text-decoration: none;
+					color: #000;
+				}
+				
+				hr{
+					clear: both;
+					background: grey;
+					margin-top: 15px;
+					margin-bottom: 0px;
+				}
+				header nav .nav .fx .bottom{
+					height: 60px;
+					line-height: 60px;
+					text-align: left;
+				}
+				header nav .nav .fx .bottom a{
+					color: black;
+					margin-left: 20px;
+					font-size: 16px;
+				}
+				header nav .nav .fx .bottom a:hover{
+					color: #d36f16;
+					text-decoration: none;
+				}
+				header nav .nav .zw{
+					background: #fff;
+					width: 200%;
+					position: absolute;
+					text-align: left;
+					box-sizing: border-box;
+					top: 56px;
+					left: 0;
+					display: none;
+					border-radius: 5px;
+					z-index: 10;
+				}
+				header nav .nav .zw p{
+					padding-left: 20px;
+					margin-bottom:0px ;
+					color: #333;
+					
+				}
+				header nav .nav .zw p a{
+					display: block;
+					width: 100%;
+				}
+				header nav .nav .zw p:first-child{
+					margin-top: 6px;	
+				}
+				header nav .nav .zw p:hover{
+					background: #FFE300;
+				}
+				header nav .nav li:hover>div{
+					display:inline-block;
+				}
+				article{
+					border:1px solid transparent;
+					background: white;
+				}
+				.search{
+					width: 700px;
+					height: 280px;
+					position: absolute;
+					z-index: 2;
+					top:0px;
+					left: 358px;
+					display: none;
+				}
+				.search .search_top{
+					background: #FFE300;
+					height: 56px;
+				}
+				.search .search_top input{
+					width: 470px;
+					height: 30px;
+					border: none;
+					margin-left: 50px;
+					margin-top: 10px;
+					outline:none;  
+				}
+				.search .search_top img{
+					width: 22px;
+					margin-left: 60px;
+				}
+				.search .search_top button{
+					float: left;
+					position: relative;
+					left: 30px;
+					top:8px;
+					font-size: 35px;
+					font-weight: 300;
+				}
+				.search .search_bot{
+					width: 580px;
+					background: #fff;
+					margin-left: 40px;
+				}
+				.search .search1{
+					padding-left: 20px;
+					margin-top: 10px;
+					font-size: 12px;
+					color: #9D9D9D;
+					height: 30px;
+					line-height: 30px
+				}
+				.search .search2{
+					padding-left: 20px;
+					height: 40px;
+					line-height: 40px;
+					color: #333;
+					font-size: 16px;
+				}
+				.search .search2:hover{
+					background: #f2f2f2;
+					cursor: pointer;
+				}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			.navs{
+				height: 56px;
+				width: 100%;
+				background: white;
+				padding: 0px 20px 0px 20px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #eee;
+				position: fixed;
+				z-index: 2;
+				top: 57px;
+			}
+			.navs ul{
+				/*overflow: hidden;*/
+				margin: 0px auto;
+				width: 672px;
+				height: 56px;
+			}
+			.navs ul li{
+				float: left;
+				height: 56px;
+				padding: 0px 24px;
+			}
+			.navs ul li:nth-of-type(1) a{
+				border-bottom: 2px solid #444;
+				color: #444;
+			}
+			.navs ul li a{
+				display: inline-block;
+				height: 56px;
+				line-height: 54px;
+				color: #999;
+			}
+			.navs #game{
+				color: #d36f16;
+				font-size: 14px;
+				position: absolute;
+				top: 17px;
+				right: 128px;
+			}
+			.big{
+				height: 2324px;
+				width: 100%;
+				/*background: pink;*/
+				box-sizing: border-box;
+				padding: 0px 60px;
+			}
+			section{
+				width: 1150px;
+				height: 2303px;
+				/*background: salmon;*/
+				margin: 76px auto 0px;
+			}
+			section ul li{
+				height: 440.69px;
+				width: 555px;
+				float: left;
+				/*background: pink;*/
+				margin: 0px 20px 20px 0px;
+				border-radius: 0px 0px 5px 5px;
+				position: relative;
+			}
+			section ul li .ima{
+				width: 555px;
+				height: 281px;
+				
+			}
+			section ul li .ima img{
+				width: 100%;
+				border-radius: 5px 5px 0px 0px;
+				transition: all 1;
+			}
+			section ul li .middle{
+				height: 101.69px;
+				width: 100%;
+				box-sizing: border-box;
+				padding: 20px;
+				position: relative;
+				background: white;
+				border-bottom: 1px solid #f2f2f2;
+			}
+			section ul li .middle a{
+				font-size: 16px;
+				color: #333333;
+				 overflow: hidden;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    width: 70%;
+			    display: inline-block;
+			}
+			section ul li .middle p{
+				padding-top: 20px;
+				font-size: 14px;
+				color: #666;
+			}
+			section ul li .middle .rightq{
+			    display: inline-block;
+			    display: inline;
+			    height: 32px;
+			    line-height: 32px;
+			    padding: 0px 20px ;
+			    color: #ffffff;
+			    position: absolute;
+			    background: #ffba00;
+			    position: absolute;
+			    right: 0px;
+			    top: 15px;
+			}
+				section ul li .middle .leftq{
+			 	 position: absolute;
+			    border-right: none;
+			    border: 16px solid transparent;
+			    border-left: 10px solid #ffffff;
+			 	right: 145px;
+			 	top: 15px;
+			}
+			
+			/*section ul li .middle span::before{
+				content: "";
+			    position: absolute;
+			    border-right: none;
+			    border: 16px solid transparent;
+			    border-left: 10px solid #ffffff;
+			 	left: 0px;
+			}*/
+			section ul li .warp{
+				width: 100%;
+				height: 58px;
+				box-sizing: border-box;
+				padding: 20px;
+				background: white;
+			}
+			section ul li .warp span{
+				color: #aaa;
+			    font-size: 12px;
+			    cursor: default;
+			    float: right;
+			    /*margin-right: 20px;*/
+			    margin-left: 20px;
+			    line-height: 18px;
+			}
+			section ul li .warp img{
+				 padding-right: 10px;
+			}
+			section ul li .warp .didi{
+				float: left;
+			    margin-left: 0px;
+			}
+			section ul li .minio{
+				height: 32px;
+			    color: #ffffff;
+			    line-height: 32px;
+			    text-align: center;
+			    padding: 0 10px;
+			    font-size: 12px;
+			    background: rgba(0, 0, 0, 0.6);
+			    border-radius: 4px 0 4px 0;
+			    display: block;
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+			    z-index: 5px;
+			}
+			#back{
+				 display: block;
+				 position: fixed;
+				 right: 120px;
+				 bottom: 59px;
+				 width: 50px;
+				 height: 50px;
+				 background-size: 100%;
+				 text-align: center;
+				 background: #ddd;
+				 line-height: 50px;
+				 border-radius: 10px;
+				 cursor: pointer;
+				 display: none;
+				}
+			#back img{
+				 width: 40px;
+				 height: 40px;
+				}
+			    .list{
+					height: 40px;
+					width: 100%;
+				}
+				.list ul{
+					width: 506px;
+					height: 38px;
+					margin: 0px auto;
+				}
+				.list ul li{
+					float: left;
+					width: 38px;
+					height: 38px;
+					border: 1px solid #E9E9E9;
+					margin: 0px 3px;
+					line-height: 40px;
+					text-align: center;
+					background: white;
+				}
+				.list ul li:first-child{
+					background: #ffe300;
+				}
+				.list ul li:first-child a{
+					color: #333;
+				}
+				.list ul li a{
+					color: #999;
+				}
+				  .ima a{
+				  	width: 555px;
+				  	height: 280px;
+				  	display: inline-block;
+				  }
+				
+				
+				footer{
+					width: 100%;
+					height: 229px;
+					background: #282828;
+					margin-top: 40px;
+					position: relative;
+				}
+				footer .footerone{
+					height: 131px;
+					width: 1130px;
+					/*background: darkcyan;*/
+					margin: 0px auto;
+					border-bottom: 1px solid #333;
+				}
+				footer .footerone .leftul{
+					width: 895px;
+					height: 22px;
+					float: left;
+					margin-top: 51px;
+				}
+				footer .footerone .leftul li{
+					list-style: none;
+					float: left;
+					margin-right: 24px;
+					
+				}
+				footer .footerone .leftul li a{
+					text-decoration: none;
+					color: #666;
+					font-size: 14px;
+				}
+				footer .footerone .rightul{
+					float: right;
+					margin-top: 51px;
+				}
+				footer .footerone .rightul li{
+					float: left;
+					margin-left: 40px;
+				}
+				.erweima_left{
+					position: absolute;
+					left: 105px;
+					top: -87px;
+					display: none;
+				}
+				.erweima_right{
+					position: absolute;
+					width: 122px;
+					height: 131px;
+					right: 124px;
+					top: -87px;
+					display: none;
+				}
+				.erweima_right::after{
+					    content: "";
+					    border-top: 10px solid #fff;
+					    border-right: 10px solid transparent;
+					    border-bottom: none;
+					    border-left: 10px solid transparent;
+					    position: absolute;
+					    bottom: -10px;
+					    left: 50%;
+					    margin-left: -10px;
+					    display: block;
+				}
+				footer .footertwo .footertwo_1{
+					height: 21px;
+					width: 100%;
+					margin-top: 20px;
+					font-size: 12px;
+					
+				}
+				footer .footertwo .footertwo_1 ul{
+					overflow: hidden;
+					padding: 0px 118px;
+				}
+				footer .footertwo .footertwo_1 ul li{
+					float: left;
+					line-height: 21px;
+					text-align: center;
+					margin: 0px 10px;
+					color: #666;
+				}
+				footer .footertwo .footertwo_1 ul li a{
+					color: #666;
+				}
+				.footertwo_1 ul li span img{
+					position: relative;
+					right: 7px;
+					top: -1px;
+				}
+				footer .footertwo .footertwo_2{
+					height: 21px;
+					width: 100%;
+					padding: 12px 161px;
+				}
+				footer .footertwo .footertwo_2 span{
+					display: inline-block;
+					margin: 0px 10px;
+					color: #666;
+					font-size: 12px;
+				}
+				.coming{
+				display: inline-block;
+				width: 50px;
+				height: 50px;
+				border-radius: 4px;
+				background: #ddd;
+				position: fixed;
+				right: 45px;
+				bottom: 35px;
+				line-height: 50px;
+				text-align: center;
+				display: none;
+				}
+		</style>
+		
+		
+		
+	</head>
+	<body>
+		
+		
+		
+		
+
+		
+				<header>
+			<img src="img/pan2/menu.png" class="menu"/>
+			<div class="menus">
+				<p class="li"><a href="index.html">首页</a><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+				<p class="li"><a href="index5.html">发现</a></p>
+					<p class="li1"><a href="">平面</a></p>
+					<p class="li1"><a href="">UI</a></p>
+					<p class="li1"><a href="">插画</a></p>
+					<p class="li1"><a href="">动漫</a></p>
+					<p class="li1"><a href="">摄影</a></p>
+					<p class="li1"><a href="">空间</a></p>
+					<p class="li1"><a href="">工业/产品</a></p>
+					<p class="li1"><a href="">三维</a></p>
+					<p class="li1"><a href="">手工艺</a></p>
+					<p class="li1"><a href="">纯艺术</a></p>
+					<p class="li1"><a href="">服装</a></p>
+					<p class="li1"><a href="">其他</a></p>
+					<p class="li1"><a href="">精选作品</a></p>
+					<p class="li1"><a href="">精选文章</a></p>
+					<p class="li1"><a href="">精选收藏</a></p>
+				<p class="li"><a href="pzk1.html">同城</a></p>
+				<p class="li"><a href="position.html">职位</a></p>
+					<p class="lis"><a href="">职位</a></p>
+					<p class="lis"><a href="">公司</a></p>
+					<p class="lis"><a href="">+发布职位</a></p>
+				<p class="li"><a href="pzk2.html">活动</a></p>
+					<p class="lis"><a href="">设计大赛</a></p>
+					<p class="lis"><a href="">公司专题策划</a></p>
+					<p class="lis"><a href="">线上活动</a></p>
+					<p class="lis"><a href="">线下活动</a></p>
+					<p class="lis"><a href="">需为吸引瓶</a></p>
+				<p class="li"><a href="index3.html">正版素材</a></p>
+					<p class="lis"><a href="index3.html">图片</a></p>
+					<p class="lis"><a href="">视频</a></p>
+					<p class="lis"><a href="index4.html">字体</a></p>
+					<p class="lis"><a href="">音乐</a></p>
+				<p class="li"><a href="course.html" target="_blank">课程</a></p>
+					<p class="lis"><a href="">正在热销</a></p>
+					<p class="lis"><a href="">口碑好课</a></p>
+				<p class="li"><a href="">...</a></p>	
+					<p class="lis"><a href="榜单.html">榜单</a></p>
+					<p class="lis"><a href="设计师.html">设计师</a></p>
+					<p class="lis"><a href="站酷APP.html">站酷APP</a></p>
+					<p class="lis"><a href="字体库.html">站酷字体</a></p>
+			</div>
+			<img src="img/pan2/logo.svg" class="pull-left logo"/>
+			<nav class="pull-left">
+				<ul class="nav pull-left clearfix">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="index5.html">发现</a>
+						<div class="fx">
+							<div class="top">
+								<div><a href="">平面</a><span>|</span></div>	
+								<div><a href="">UI</a><span>|</span></div>	
+								<div><a href="">网页</a><span>|</span></div>	
+								<div><a href="">插画</a><span>|</span></div>	
+								<div><a href="">动漫</a><span>|</span></div>	
+								<div><a href="">摄影</a><span>|</span></div>	
+								<div><a href="">空间</a><span>|</span></div>	
+								<div><a href="">工业/产品</a><span>|</span></div>	
+								<div><a href="">三维</a><span>|</span></div>	
+								<div><a href="">影视</a><span>|</span></div>	
+								<div><a href="">手工艺</a><span>|</span></div>	
+								<div><a href="">纯艺术</a><span>|</span></div>	
+								<div><a href="">服装</a><span>|</span></div>	
+								<div><a href="">其他</a><span>|</span></div>	
+											
+							</div>
+							<hr/>
+							<div class="bottom">
+								<a href="">精选作品&nbsp;></a>
+								<a href="">精选文章&nbsp;></a>
+								<a href="">精选收藏&nbsp;></a>
+							</div>
+						</div>
+					
+					</li>
+					<li><a href="pzk1.html">同城</a></li>
+					<li>
+						<a href="position.html">职位</a>
+						<div class="zw">
+							<p><a href="">职位</a></p>
+							<p><a href="">公司</a></p>
+							<p><a href="">+发布职位</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="pzk2.html">活动</a>
+						<div class="zw">
+							<p><a href="">设计大赛</a></p>
+							<p><a href="">公司专题策划</a></p>
+							<p><a href="">线上活动</a></p>
+							<p><a href="">线下活动</a></p>
+							<p><a href="">学习音频</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="index3.html">正版素材</a>
+						<div class="zw">
+							<p><a href="index3.html">图片</a></p>	
+							<p><a href="">视频</a></p>
+							<p><a href="index4.html">字体</a></p>
+							<p><a href="">音乐</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="course.html" target="_blank">课程</a>
+						<div class="zw">
+							<p><a href="">正在热销</a></p>
+							<p><a href="">口碑好课</a></p>
+						</div>
+					</li>
+					<li>
+						<a href=""></a>
+						<div class="zw">
+							<p><a href="榜单.html">榜单</a></p>
+							<p><a href="设计师.html">设计师</a></p>
+							<p><a href="站酷APP.html">站酷APP</a></p>
+							<p><a href="字体库.html">站酷字库</a></p>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<span><a href="">登录</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="">注册</a></span>
+			<div class="search">
+				<div class="search_top">
+					<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<input type="text" name="" id="" />
+					<img src="img/pan2/seach.svg"/>
+				</div>
+					<div class="search_bot">
+						<div class="search1">热门搜索</div>
+						<div class="search2">2019毕业展</div>
+						<div class="search2">青春答卷2018</div>
+						<div class="search2">2018毕业展</div>
+						<div class="search2">青春答卷2018</div>
+						<div class="search2">我是毕业生</div>
+					</div>
+			</div>
+		</header>
+		
+		
+		<div class="navs">
+			<ul>
+				<li><a href="" onclick="return false">最新活动</a></li>
+				<li><a href="" onclick="return false">设计大赛</a></li>
+				<li><a href="" onclick="return false">专题策划</a></li>
+				<li><a href="" onclick="return false">线上活动</a></li>
+				<li><a href="" onclick="return false">线下活动</a></li>
+				<li><a href="" onclick="return false">学习音频</a></li>
+			</ul>
+			<a href="" id="game">我要举办赛事</a>
+		</div>
+		<div class="big">
+			<section>
+				<ul>
+					<li>
+						
+						<div class="ima"><a href="pzk3.html"><img src="img/pan2/good.jpg"/></a></div>
+						<div class="middle">
+							<a href="" class="title">小Z书房 ： 站酷图书综合专题</a>
+							<p class="data">2019-05-10 – 2022-05-10</p>
+							<span class="rightq">距离截稿还有28天</span>
+							<span class="leftq"></span>
+						</div>
+						<div class="warp">
+							<span class="didi"><img src="img/pan2/card-shijian.svg" />一天</span>
+							<span class="la"><img src="img/pan2/card-liulan.svg"/>19</span>
+							<span class="lala"><img src="img/pan2/canyuzhe.svg"/>40</span>
+							<span class="lalala"><img src="img/pan2/card-zuopin.svg"/>2849</span>
+						</div>
+						<span class="minio">设计大赛</span>
+					</li>
+				</ul>
+			</section>
+		</div>
+		<div class="list">
+					<ul>
+						<li><a href="" onclick="return false">1</a></li>
+						<li><a href="" onclick="return false">2</a></li>
+						<li><a href="" onclick="return false">3</a></li>
+						<li><a href="" onclick="return false">4</a></li>
+						<li><a href="" onclick="return false">5</a></li>
+						<li><a href="" onclick="return false">6</a></li>
+						<li><a href="" onclick="return false">7</a></li>
+						<li><a href="" onclick="return false">…</a></li>
+						<li><a href="" onclick="return false">40</a></li>
+						<li><a href="" onclick="return false">41</a></li>
+						<li><a href="" onclick="return false">></a></li>
+					</ul>
+				</div>
+		<footer>
+			<div class="footerone">
+				<ul class="leftul">
+					<li><img src="img/pan2/footer-mobile.svg"/></li>
+					<li><a href="">移动端</a></li>
+					<li><a href="">关于我们</a></li>
+					<li><a href="">加入酷站</a></li>
+					<li><a href="">用户协议</a></li>
+					<li><a href="">隐私政策</a></li>
+					<li><a href="">侵权申诉</a></li>
+					<li><a href="">企业服务</a></li>
+					<li><a href="">帮助中心</a></li>
+					<li><a href="">联系我们</a></li>
+					<li><a href="">中文</a></li>
+					<li><a href="">English</a></li>
+				</ul>
+				<ul class="rightul">
+					<li><img src="img/pan2/footer-share-weixin.svg"/></li>
+					<li><img src="img/pan2/footer-share-weibo.svg"/></li>
+				</ul>
+				<img src="img/pan2/footer-mobile-code.png" class="erweima_left"/>
+				<img src="img/pan2/footer-weixin-code.jpg" class="erweima_right"/>
+			</div>
+			<div class="footertwo">
+				<div class="footertwo_1">
+					<ul>
+						<li><a href="">京ICP备11017824号-4 </a></li>
+						<li>|</li>
+						<li><a href=""> 京ICP证130164号 </a></li>
+						<li>|</li>
+						<li><a href=""><span><img src="img/pan2/icon-police.png"/></span>京公网安备11010502000501号 </a></li>
+						<li>|</li>
+						<li><a href=""> 网络文化经营许可证 京网文[2016]6173-844号 </a></li>
+						<li>|</li>
+						<li><a href=""> 广播电视节目制作经营许可证（京）字第06990号</a></li>
+					</ul>
+				</div>
+				<div class="footertwo_2">
+					<span>营业执照</span>
+					<span> 网上有害信息举报专区 </span>
+					<span>不良信息举报电话：010-56538658</span>
+					<span>举报邮箱 jubao@zcool.com.cn</span>
+					<span>联系电话：010-56538600</span> 
+					<span>Copyright © 2006-2019 ZCOOL站酷</span>
+				</div>
+			</div>
+		</footer>
+		<span class="coming"><img src="img/pan2/tt.png"/></span>
+		<script>
+			
+			$('.navs ul li').hover(function(){
+				$(this).children('a').css({'border-bottom':'2px solid #444','color':'#444'}).parent().siblings().children().css({'border':'none','color':'#999'})
+			},function(){
+				$(this).children('a').css({'border':'none','color':'#999'});
+			})
+//			$('.navs ul li').click(function(){
+//				$(this).children('a').css({'border-bottom':'2px solid #444','color':'#444'}).parent().siblings().children().css({'border':'none','color':'#999'})
+//			})
+
+
+			var mini=['策划专题','学习音频','设计大赛','专题策划','设计大赛','策划专题','设计大赛','策划专题','线下活动']
+			var img_src=['img/pan2/sss.jpg','img/pan2/bigtwo.jpg','img/pan2/bigfour.jpg','img/pan2/bigfive.jpg',
+						'img/pan2/bigsix.jpg','img/pan2/bigseven.jpg','img/pan2/bigeight.jpg','img/pan2/bignine.jpg','img/pan2/bigten.jpg'];
+			var titles=['下厨也要美美的，从一条围裙开始 - 六月鲜围裙创意设计大赛','将梦想演绎到底 - 魅族Flyme x 站酷 - 手机主题设计师联盟','「再塑中华印象」中华符号创意设计大赛',
+						'GDC Award 2019 站酷专区','《小呆说H5》','小呆《H5+营销设计手册》 - 站酷出品图书','都市丽人的师傅','孤独的小污猪','有人说是个速度']
+			var data=['2017-12-3-2018-5-8','2018-1-7-2019-5-6','2017-1-4-2018-8-18','2018-11-2-2019-9-7','2018-2-5-2019-7-4',
+						'2018-10-3-2018-11-8','2017-12-3-2018-5-7','2019-3-5-2019-4-17','2019-12-3-2019-12-18']
+			var day=['距离截稿还有22天','距离截稿还有54天','距离截稿还有32天','距离截稿还有55天','距离截稿还有28天',
+					'距离截稿还有46天','距离截稿还有67天','距离截稿还有34天','距离截稿还有27天']
+			var la=['3243','5673','1345','6574','4567','6543','8785','4566','3566']
+			var lala=['34','322','23','45','3453','33','35','373','3243']
+			var lalala=['33','5243','67','12','98','45','56','63','78']
+			var aa=['pzk4.html','durex.html']
+			for(var i=0;i<img_src.length;i++){
+				var clone_img=$( 'section ul li:first-child').clone(true);
+				clone_img.children('.minio').html(mini[i]);
+				clone_img.children('.ima').children('a').children('img').attr('src',img_src[i]);
+				clone_img.children('.ima').children('a').attr('href',aa[i]);
+				clone_img.children('.middle').children('.title').html(titles[i]);
+				clone_img.children('.middle').children('.data').html(data[i]);
+				clone_img.children('.middle').children('.rightq').html(day[i]);
+				clone_img.children('.warp').children('.la').html('<img src="img/pan2/card-liulan.svg"/>'+la[i]);
+				clone_img.children('.warp').children('.lala').html('<img src="img/pan2/canyuzhe.svg"/>'+lala[i]);
+				clone_img.children('.warp').children('.lalala').html('<img src="img/pan2/card-zuopin.svg"/>'+lalala[i]);
+				$('section ul').append(clone_img);
+			}
+			$('ul li').hover(function(){
+				$(this).children('.ima').children().css('opacity','0.8')
+			},function(){
+				$(this).children('.ima').children().css('opacity','1')
+			})
+//			$('#back').hover(function(){
+//			    $('#back').children('img').attr('src','img/pan2/backtop2.png');
+//			   },function(){
+//			    $('#back').children('img').attr('src','img/pan2/backtop.png');
+//			   })
+//			   $('#back').click(function(){
+//			      $("html,body").animate({scrollTop:0},1000);
+//			     })
+//			 
+//			   
+////			   滚轮事件
+//		   	$(window).scroll(function(){
+//			    var k=$(window).scrollTop();
+//			    if(k>=545){
+//			     $('#back').css('display','block');
+//			    }else{
+//			     $('#back').css('display','none');
+//			    }
+//			    
+//			   })
+//		   	
+		   	
+		   	
+		   	
+		   	
+		   	$('.list ul li').click(function(){
+		   		$(this).css('background','#ffe300').children().css('color','#333').parent().siblings("li").css('background','white').children().css('color','#999');;
+		   	})
+		   	
+		   	
+//		   	footer的点击事件
+		   	$('.leftul li').eq(1).hover(function(){
+		   		$('.erweima_left').css('display','inline-block');
+		   	},function(){
+		   		$('.erweima_left').css('display','none');
+		   	})
+		   	
+		   	$('.rightul li').eq(0).hover(function(){
+		   		$('.erweima_right').css('display','inline-block');
+		   		$(this).children('img').attr('src','img/pan2/footer-share-weixinhover.svg');
+		   	},function(){
+		   		$('.erweima_right').css('display','none');
+		   		$(this).children('img').attr('src','img/pan2/footer-share-weixin.svg')
+		   	})
+		   	$('.rightul li').eq(1).hover(function(){
+		   		$(this).children('img').attr('src','img/pan2/footer-share-weibohover.svg');
+		   	},function(){
+		   		$(this).children('img').attr('src','img/pan2/footer-share-weibo.svg');
+		   	})
+		   	
+		   	
+		   	
+		   	
+		   	
+		   	 		//header
+			//搜索图标点击出现搜索框
+				$('.log:first').click(function(e){
+					e.preventDefault();
+					$('.search').fadeIn(1000);					
+//					$(this).fadeOut(1000);
+					$(".search input").click(function(e){
+						 $(".search").fadeIn(1000);
+						 e.stopPropagation();
+	    			});
+	    			$(window).click(function(e){
+				        $(".search").fadeOut(1000);
+					});
+				});
+				$(".log:first").click(function(e){
+       				 e.stopPropagation();
+    });
+				//menus隐藏菜单栏	
+				$('.menu').click(function(){
+					$('.menus').addClass('menu1')
+					
+				});
+				$('.menus .li button').click(function(){
+					$('.menus').removeClass('menu1')
+					
+				})
+		   	
+		   	
+		   	
+		   	
+		   	
+		   	
+		   	
+//		   	头部滚轮事件
+			$(window).scroll(function(){
+				if($(window).scrollTop()>=100){
+//					console.log(1)
+					$('.navs').css('top',0)
+					console.log(1)
+				}else{
+					$('.navs').css('top','57px')
+				}
+			})
+			
+			
+			
+			
+			
+				
+//			点击回到顶部
+			
+//			到700就出现
+			$(window).scroll(function(){
+				var q=$(window).scrollTop();
+				if(q>=700){
+					$('.coming').css('display','inline-block');
+				}else{
+					$('.coming').css('display','none');
+				}
+			})
+			
+//			鼠标移进换图片
+			
+			$('.coming').hover(function(){
+				$('.coming').children('img').attr('src','img/pan2/ttblack.png');
+			},function(){
+				$('.coming').children('img').attr('src','img/pan2/tt.png');
+			})
+			
+//			点击回到顶部
+			$('.coming').click(function(){
+				
+				 $('html,body').animate({scrollTop:0}, 0);
+			})
+			
+		</script>
+	</body>
+</html>

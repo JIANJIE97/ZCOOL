@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min1.css"/>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="icon" href="img/position/favicon.ico" />
+		<script src="js/jquery-3.3.1.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<style>
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			body{
+				height: 21650px;
+				background: #F4F4F4;
+				position: relative;
+			}
+			a{
+				text-decoration: none;
+			}
+			ul{
+				list-style: none;
+			}
+			.a:hover{
+				text-decoration: none;
+				color: #333;
+			}
+			ul{
+				list-style: none;
+			}
+			header{
+				width: 100%;
+				height: 56px;
+				background: #ffe300;
+				position: relative;
+			}
+			.back-top{
+			    background-color: #ddd;
+			    background-image: url(lyh-img/imges/back-top.png);
+			    background-repeat: no-repeat;
+			    background-position: center;
+		        width: 50px;
+		        height: 50px;
+			    position: fixed;
+			    left: 50%;
+			    bottom: 34px;
+		        margin-left: 575px;
+		        z-index: 10;
+		       	border-radius: 5px;
+		       	display: none;
+			}
+			.back-top:hover{
+				background-image: url(lyh-img/imges/back-top-hover.png);
+			}
+			.back-top a{
+				display: block;
+			    display: inline-block;
+			    vertical-align: middle;
+			    width: 50px;
+			    height: 50px;
+			    text-decoration: none;
+			}
+			.search{
+				width: 700px;
+				height: 280px;
+				position: absolute;
+				z-index: 2;
+				top:0px;
+				left: 358px;
+				display: none;
+			}
+			.search .search_top{
+				background: #FFE300;
+				height: 56px;
+			}
+			.search .search_top input{
+				width: 470px;
+				height: 30px;
+				border: none;
+				margin-left: 50px;
+				margin-top: 10px;
+				outline:none;  
+			}
+			.search .search_top img{
+				width: 22px;
+				margin-left: 60px;
+			}
+			.search .search_top button{
+				float: left;
+				position: relative;
+				left: 30px;
+				top:8px;
+				font-size: 35px;
+				font-weight: 300;
+			}
+			.search .search_bot{
+				width: 580px;
+				background: #fff;
+				margin-left: 40px;
+			}
+			.search .search1{
+				padding-left: 20px;
+				margin-top: 10px;
+				font-size: 12px;
+				color: #9D9D9D;
+				height: 30px;
+				line-height: 30px
+			}
+			.search .search2{
+				padding-left: 20px;
+				height: 40px;
+				line-height: 40px;
+				color: #333;
+				font-size: 16px;
+			}
+			.search .search2:hover{
+				background: #f2f2f2;
+				cursor: pointer;
+			}
+			.top-titleshow{
+				width: 100%;
+				height: 56px;
+				background: white;
+				position: fixed;
+				border-bottom: 1px solid #F4F4F4;
+				box-shadow: 0 2px 15px 1px #F4F4F4;
+				top: 0px;
+				z-index: 4;
+				display: none;
+			}
+			.top-titleshow #top-title-left{
+				width: 300px;
+				height: 56px;
+				margin-left: 109px;
+			}
+			.top-titleshow #top-title-left span{
+				display: block;
+			    height: 56px;
+		        font-size: 16px;
+			    color: #444;
+			    line-height: 56px;
+			    display: inline-block;
+			    line-height: 56px;
+			}
+			.top-titleshow #top-title-left img{
+				margin-right: 8px;
+				position: relative;
+				top: 0px;
+				cursor: pointer;
+			}
+			.top-titleshow #top-title-left img:nth-of-type(1){
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				top: 0px;
+			}
+			.top-titleshow #top-title-left img:nth-of-type(2){
+				width: 18px;
+				height: 18px;
+			}
+			.top-titleshow #top-title-left .otherlist{
+				width: 20px;
+				height: 18px;
+			}
+			.top-titleshow #top-title-right{
+				width: 179px;
+				height: 56px;
+				position: fixed;
+				top: 14px;
+				right: 109px;
+			}
+			.top-titleshow #top-title-right span{
+			    padding:0 14px;
+			    line-height: 32px;
+			    font-size: 12px;
+			    margin-left: 10px;
+			    display: inline-block;
+			    box-sizing: border-box;
+			    background-size: 18px auto;
+			    border: 1px solid #bbb;
+			    border-radius: 4px;
+			    width: 77px;
+			    height: 28px;
+			    line-height: 28px;
+			    text-align: center;
+			    cursor: pointer;
+			}
+			.top-titleshow #top-title-right span:hover{
+				border: 1px solid #122B40;
+			}
+			.top-titleshow #top-title-right span img{
+				width: 16px;
+				width: 16px;
+				position: relative;
+				top: -2px;
+			}
+			.top-list-hidden{
+			   	width: 306px;
+			   	height: 270px;
+			    top: 55px;
+			    left: 330px;
+			    z-index: 1;
+			    background: white;
+			    position: fixed;
+			    z-index: 5;
+			    border-radius: 5px;
+			    box-shadow: -1px -1px 1px 1px #F4F4F4;
+			    display: none;
+			    border: 1px solid #F4F4F4;
+			}
+			.top-list-hidden #jiantou{
+				display: block;
+				width: 12px;
+				height: 12px;
+				box-shadow: -2px -2px 1px 2px #F4F4F4;
+				transform: rotate(45deg);
+				position: relative;
+				bottom: 6px;
+				left: 30px;
+				z-index: 6;
+				/*background: saddlebrown;*/
+			}
+			.top-list-hidden span{
+				display: block;
+				width: 306px;
+				height: 50px;
+			}
+			.top-list-hidden span:nth-of-type(2){
+				width: 306px;
+				font-size: 14px;
+			    padding: 0 20px;
+			    box-sizing: border-box;
+			    font-size: 12px;
+			    height: 45px;
+			    line-height: 50px;
+			    margin-bottom: 5px;
+			    border-bottom: 1px solid #eee;
+			    text-align: left;
+			    line-height: 50px;
+			}
+			.top-list-hidden span a{
+				display: block;
+				text-decoration: none;
+				height: 45px;
+				line-height: 45px;
+				font-size: 14px;
+				color: #282828;
+				text-align: center;
+			}
+			.top-list-hidden span a:hover{
+				background: #F4F4F4;
+			}
+			.top-advertisement{
+			    padding: 20px 0;
+			    background: #fff;
+			    border-bottom: 1px solid #eee;
+			}
+			.top-advertisement img{
+			    width: 1129px;
+    			height: 96px;
+    			margin: 0 auto;
+    			display: block;
+			}
+			.fontCard-message{
+				width:100%;
+				height: 131px;
+				padding:0 110px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #EEEEEE;
+				background: white;
+			}
+			.fontCard-message #card-left{
+				width: 813px;
+				height: 130px;
+				padding: 13px 30px 20px 0;
+				box-sizing: border-box;
+				border-right: 1px solid #EEEEEE;
+				position: relative;
+				float: left;
+			}
+			.fontCard-message #card-left h2{
+			    color: #333;
+			    font-size: 24px;
+			    font-weight: 400;
+			    display: inline-block;
+			    margin-top: 0px;
+			    margin-bottom: 0px;
+			}
+			.fontCard-message #card-left h2 img{
+				width: 18px;
+				height: 18px;
+				margin-left: 20px;
+			}
+			.fontCard-message #card-left h2 img:nth-of-type(2){
+				width: 20px;
+			}
+			.fontCard-message #card-left p{
+			    padding-top: 8px;
+			    font-size: 14px;
+			    color: #bbb;
+			}
+			.fontCard-message #card-left .card-left-left{
+				position: absolute;
+				left: 0px;
+				bottom: 20px;
+			}
+			.fontCard-message #card-left .card-left-left span a{
+				display: block;
+				width: 63px;
+				height: 19px;
+				line-height: 19px;
+				float: left;
+			    font-size: 14px;
+   				color: #bbb;
+   				text-align: center;
+			}
+			.fontCard-message #card-left .card-left-left span:nth-of-type(4) a{
+				font-size: 18px;
+			}
+			.fontCard-message #card-left .card-left-left i{
+				display: block;
+				width: 26px;
+				margin: 0 -5px 0 10px;
+				height: 19px;
+				float: left;
+			    font-size: 12px;
+   				color: #bbb;
+			}
+			.fontCard-message #card-left .card-left-right{
+				position: absolute;
+				right: 0px;
+				bottom: 20px;
+			}
+			.fontCard-message #card-left .card-left-right a {
+				display: inline-block;
+				padding: 0 25px 0 27px;
+			}
+			.fontCard-message #card-left .card-left-right nobr:nth-child(2) a{
+				border-left: 1px solid #F2F2F2;
+				border-right: 1px solid #F2F2F2;
+			}
+			.fontCard-message #card-left .card-left-right a span{
+				display: inline-block;
+				font-size: 14px;
+   				color: #bbb;
+			}
+			.fontCard-message #card-right{
+				width: 316px;
+				height: 130px;
+				padding: 15px 0 20px 30px;
+				background:white;
+				box-sizing: border-box;
+				float: left;
+			}
+			.fontCard-message #card-right .header-box{
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				float: left;
+			}
+			.fontCard-message #card-right #card-message{
+				float: left;
+				width: 191px;
+				height: 95px;
+				position: relative;
+				margin-left: 15px;
+			}
+			.fontCard-message #card-right #card-message img{
+				width: 16px;
+				height: 16px;
+				margin-left: 5px;
+			}
+			.fontCard-message #card-right #card-message .card-list-name{
+				color: #333;
+			    font-size: 16px;
+			    font-weight: 600;
+			}
+			.fontCard-message #card-right #card-message p{
+			    font-size: 12px;
+    			color: #bbb;
+    			margin-top: 2px;
+			}
+			.fontCard-message #card-right #card-message span{
+			    color: #666;
+			    font-size: 14px;
+			}	
+			.fontCard-message #card-right #card-message span:nth-of-type(2){
+				color: #000000;
+			}	
+			.fontCard-message #card-right #card-message a{
+			    color: #333;
+    			font-weight: 600;
+    			text-decoration: none;
+    			font-size: 14px;
+			}
+			.fontCard-message #card-right #card-message .follow{
+				position: absolute;
+				text-align: center;
+				width: 86px;
+				height: 34px;
+				bottom: 1px;
+				line-height: 34px;
+			    border-radius: 4px;
+    			cursor: pointer;
+    			color: #444;
+			    font-family: inherit;
+    			font-size: 14px;
+				background: #FFE300;
+				border: 1px solid #ffe300;
+				bottom: 0px;
+				left: 0px;
+			}
+			.fontCard-message #card-right #card-message .follow:hover{
+				background: #FFD100;
+			}
+			.fontCard-message #card-right #card-message .letter{
+				position: absolute;
+				text-align: center;
+				width: 86px;
+				height: 34px;
+				bottom: 1px;
+				right: 0px;
+				line-height: 34px;
+			    border-radius: 4px;
+    			cursor: pointer;
+    			color: #444;
+			    font-family: inherit;
+    			font-size: 14px;
+				background:white;
+			    border: 1px solid #bbb;
+				bottom: 0px;
+			}
+			.fontCard-message #card-right #card-message .letter:hover{
+				border: 1px solid #122B40;
+			}
+			section{
+				width: 100%;
+				height: 19100px;
+				padding:40px 109px  0;
+				background: white;
+				box-sizing: border-box;
+			}
+			section .top-text{
+			    width: 800px;
+			    line-height: 32px;
+			    font-size: 16px;
+			    word-wrap: break-word;
+			    margin: 0 auto;
+		        color: #666;
+			}
+			section figure{
+				width: 1130px;
+				margin: 0 auto;
+			}
+			section figure img{
+				width: 1130px;
+			}
+			section .nice-butBox{
+				width: 1130px;
+				height: 72px;
+			}
+			section .nice-butBox span{
+				display: block;
+			    width: 118px;
+			    height: 72px;
+			    border-radius: 50px;
+			    color: #282828;
+			    background-repeat: no-repeat;
+			    background-position: center 12px;
+			    padding-top: 14px;
+			    box-sizing: border-box;
+			    cursor: pointer;
+			    position: relative;
+			    display: block;
+			    text-align: center;
+			    background-color: #ffe300;
+			    margin: 90px auto 40px;
+			}
+			section .nice-butBox span:hover{
+				background: #FFD100;
+			}
+			.m-otherbut{
+				width: 100%;
+				height: 80px;
+				position: relative;
+				padding: 0 109px;
+				box-sizing: border-box;
+				border-top: 1px solid #EEEEEE;
+				background: white;
+			}
+			.m-otherbut div{
+				position: absolute;
+				top: 50%;
+				margin-top: -40px;
+			}
+			.m-otherbut #otherbut-left{
+				width: 431px;
+				height: 79px;
+				left: 109px;
+			}
+			.m-otherbut #otherbut-left span{
+				display: inline-block;
+				font-size: 14px;
+				height: 29px;
+				color: #bbb;
+				text-align: center;
+				line-height: 29px;
+				margin-top: 25px;
+			}
+			.m-otherbut #otherbut-left a{
+				text-align: center;
+				display: inline-block;
+				box-sizing: border-box;
+			    padding: 3px 18px;
+			    color: #666;
+			    font-size: 14px;
+			    border: 1px solid #bbb;
+			    cursor: pointer;
+			    vertical-align: middle;
+			    zoom: 1;
+			    border-radius: 4px;
+			}
+			.m-otherbut #otherbut-left a:hover{
+				border: 1px solid #122B40;
+			}
+			.m-otherbut #otherbut-right{
+				right: 109px;
+				width: 306px;
+				height: 79px;
+				top: 80%;
+			}
+			.m-otherbut #otherbut-right img{
+				width: 16px;
+				height: 16px;
+				position: relative;
+				top: 2px;
+				right: 10px;
+			}
+			.m-otherbut #otherbut-right a{
+				padding: 0 18px 0 25px;
+			    line-height: 32px;
+			    font-size: 12px;
+			    margin-left: 10px;
+			    display: inline-block;
+			    box-sizing: border-box;
+			    background-size: 18px auto;
+			  	border: 1px solid #bbb;
+			  	border-radius: 4px;
+			}
+			.m-otherbut #otherbut-right a:hover{
+				border: 1px solid #122B40;
+			}
+			.m-otherbut:hover #report{
+				display: block;
+			}
+			nobr #report{
+				position: absolute;
+				top: 50%;
+				margin-top: -18px;
+				left: 50%;
+				margin-left:190px;
+				opacity: 0.5;
+				cursor: pointer;
+				display: none;
+			}
+			nobr #report img{
+				width: 76px;
+				height: 35px;
+			}
+			nobr #report:hover{
+				opacity: 1;
+			}
+			hgroup{
+				width: 100%;
+				padding:0px 109px ;
+				background: #F4F4F4;
+				box-sizing: border-box;
+			}
+			hgroup .liscard-l{
+				width: 260px;
+				height: 1000px;
+				/*background: salmon;*/
+				float: left;
+				margin-right: 20px;
+				margin-top: 20px;
+			}
+			hgroup .liscard-l .person_card{
+				width: 260px;
+				height: 244px;
+				background: white;
+				border-radius: 5px;
+				overflow: hidden;
+				margin-bottom: 10px;
+			}
+			hgroup .liscard-l .person_card .header-box{
+				width: 80px;
+				height: 80px;
+				border-radius: 50%;
+				margin: 30px auto 20px;
+				display: block;
+				
+			}
+			hgroup .liscard-l .person_card #card-messages{
+				width: 191px;
+				height: 95px;
+				position: relative;
+				margin: 0 auto;
+			}
+			hgroup .liscard-l .person_card #card-messages img{
+				width: 16px;
+				height: 16px;
+				margin-left: 5px;
+			}
+			hgroup .liscard-l .person_card #card-messages .card-list-name{
+				color: #333;
+			    font-size: 16px;
+			    font-weight: 600;
+			}
+			hgroup .liscard-l .person_card #card-messages p{
+			    font-size: 12px;
+    			color: #bbb;
+    			margin-top: 2px;
+    			text-align: center;
+			}
+			hgroup .liscard-l .person_card #card-messages div{
+				margin: 0 auto;
+				width: 192px;
+				height: 21px;
+				text-align: center;
+			}
+			hgroup .liscard-l .person_card #card-messages span{
+			    color: #666;
+			    font-size: 14px;
+			    text-align: center;
+			}	
+			hgroup .liscard-l .person_card #card-messages span:nth-of-type(2){
+				color: #000000;
+			}	
+			hgroup .liscard-l .person_card #card-messages a{
+			    color: #333;
+    			font-weight: 600;
+    			text-decoration: none;
+    			font-size: 14px;
+			}
+			hgroup .liscard-l .person_card #card-messages .follow{
+				position: absolute;
+				text-align: center;
+				width: 86px;
+				height: 34px;
+				bottom: 1px;
+				line-height: 34px;
+			    border-radius: 4px;
+    			cursor: pointer;
+    			color: #444;
+			    font-family: inherit;
+    			font-size: 14px;
+				background: #FFE300;
+				border: 1px solid #ffe300;
+				bottom: 0px;
+				left: 0px;
+			}
+			hgroup .liscard-l .person_card #card-messages .follow:hover{
+				background: #FFD100;
+			}
+			hgroup .liscard-l .person_card #card-messages .letter{
+				position: absolute;
+				text-align: center;
+				width: 86px;
+				height: 34px;
+				bottom: 1px;
+				right: 0px;
+				line-height: 34px;
+			    border-radius: 4px;
+    			cursor: pointer;
+    			color: #444;
+			    font-family: inherit;
+    			font-size: 14px;
+				background:white;
+			    border: 1px solid #bbb;
+				bottom: 0px;
+			}
+			hgroup .liscard-l .person_card #card-messages .letter:hover{
+				border: 1px solid #122B40;
+			}
+			hgroup .work-messageCard{
+				width: 260px;
+				height: 268px;
+				background: white;
+				border-radius: 5px;
+			}
+			hgroup .work-messageCard .title{
+				display: block;
+				padding: 0 20px;
+				height: 56px;
+				padding: 0 20px;
+				box-sizing: border-box;
+			    line-height: 56px;
+			    position: relative;
+			    border-bottom: 1px solid #F4F4F4;
+			    color: #444;
+			    font-size: 16px;
+			    font-weight: 400;
+			}
+			hgroup .work-messageCard span:hover p{
+				opacity: 1;
+			}
+			hgroup .work-messageCard span p{
+				position: absolute;
+				right: 10px;
+				top: 50%;
+				margin-top: -28px;
+				opacity: .5;
+			}
+			hgroup .work-messageCard #messageCard-m{
+				width:220px ;
+				height:125px;
+				padding: 20px;
+				position: relative;
+				border-bottom: 1px solid #F4F4F4;
+			}
+			hgroup .work-messageCard  #messageCard-m p{
+				font-size: 14px;
+			}
+			hgroup .work-messageCard  #messageCard-m p:nth-of-type(2){
+				margin-left: 80px;
+				font-size: 12px;
+				color: #bbb;
+				margin-top: 5px;
+			}
+			hgroup .work-messageCard  #messageCard-m img{
+				width: 48px;
+				height: 48px;
+				border-radius: 50%;
+				position: absolute;
+				left: 20px;
+				bottom: 20px;
+			}
+			hgroup .work-messageCard  #messageCard-m a{
+				margin-left: 68px;
+				display: block;
+				margin-top: 20px;
+				max-width: 156px;
+			    color: #444;
+			    font-weight: 600;
+		        font-size: 16px;
+			}
+			hgroup .work-messageCard  #messageCard-m p img{
+				width: 12px;
+				height: 12px;
+				bottom: -1px;
+				margin-bottom: 25px;
+				left: 50%;
+				margin-left: -25px;
+			}
+			hgroup .work-messageCard #messageCard-time{
+				width:220px ;
+				height: 86px;
+				padding: 20px;
+				box-sizing: border-box;
+			}
+			hgroup .work-messageCard #messageCard-time p{
+				display: block;
+				color: #bbb;
+				font-size: 14px;
+			    color: #666;
+			}
+			hgroup .work-messageCard #messageCard-time p:nth-of-type(2){
+				display: block;
+				color: #999;
+				font-size: 12px;
+				margin-top: 10px;
+			}
+			hgroup  #collection-box{
+				width:260px ;
+				height: 304px;
+				margin-top: 10px;
+				background: white;
+				border-radius: 5px;
+			}
+			hgroup #collection-box span{
+				display: block;
+				padding: 0 20px;
+				height: 56px;
+				box-sizing: border-box;
+			    line-height: 56px;
+			    position: relative;
+			    color: #444;
+			    font-size: 16px;
+			    font-weight: 400;
+			}
+			hgroup #collection-box figure{
+				width: 260px;
+				height: 195px;
+				position: relative;
+			}
+			hgroup #collection-box figure img{
+				width: 130px;
+				height: 98px;
+				float: left;
+			}
+			hgroup #collection-box figure a{
+				display: block;
+				width: 260px;
+				height: 196px;
+				background: rgba(0,0,0,0.5);
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				text-align: center;
+				line-height: 195px;
+				color: white;
+				transition: all 1s;
+			}
+			hgroup #collection-box figure a:hover{
+				background: rgba(0,0,0,0.1);
+			}
+			hgroup #collection-box span a{
+			    text-align: center;
+			    color: #d36f16;
+			    font-size: 14px;
+			    text-align: center;
+			   	display: block;
+			}
+			hgroup .liscard-l span img{
+				width: 260px;
+				height: 196px;
+				margin-top: 10px;
+				border-radius: 5px;
+				cursor: pointer;
+			}
+			hgroup .list-advertisement{
+				width: 850px;
+				height: 200px;
+				background: transparent;
+				margin-top: 20px;
+				float: left;
+			}
+			hgroup .list-advertisement ul li{
+				width: 204px;
+				height: 200px;
+				margin-right: 10px;
+				border-radius: 5px;
+				float: left;
+				background: white;
+				cursor: pointer;
+			}
+			hgroup .list-advertisement ul li:nth-of-type(4){
+				margin-right: 0px;
+			}
+			hgroup .list-advertisement ul li img{
+				width: 204px;
+				height: 154px;
+			}
+			hgroup .list-advertisement ul li img:hover{
+				opacity: .8;
+			}
+			hgroup .list-advertisement ul li p{
+				width:200px;
+				height: 23px;
+				font-size: 14px;
+			    color: #282828;
+		        max-width: 168px;
+			    text-indent: 16px;
+			    white-space: nowrap;
+			    text-overflow: ellipsis;
+			    overflow: hidden;
+			    display: inline-block;
+			    vertical-align: middle;
+			    margin-top: 10px;
+			}
+			hgroup .list-advertisement ul li p:hover{
+				color: #D87F31;
+			}
+			hgroup .list-advertisement ul li span img{
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				margin-top: 10px;
+			}
+			hgroup .visitor-r{
+				width: 850px;
+				background: transparent;
+				margin-top: 10px;
+				float: left;
+			}
+			hgroup .visitor-r #visitor-r-top {
+				width: 100%;
+				padding: 30px;
+				height: 150px;
+				box-sizing: border-box;
+				border-bottom: 1px solid #EEEEEE;
+				position: relative;
+				background: white;
+			}
+			hgroup .visitor-r #visitor-r-top input{
+				width: 100%;
+				height: 40px;
+			    color: #666;
+			    font-size: 14px;
+			    border: 1px solid #ddd;
+   				padding:10px 50px 10px 20px;
+   				box-sizing: border-box;
+			    background: #f4f4f4;
+			    border-radius: 5px;
+			}
+			hgroup .visitor-r #visitor-r-top figure{
+				width: 100%;
+				height: 38px;
+				margin-top: 10px;
+				position: relative;
+			}
+			hgroup .visitor-r #visitor-r-top  span{
+				position: absolute;
+				width: 100px;
+			    right: -30px;
+			    top: 42px;
+				font-style: normal;
+				color: #999;
+				font-size: 12px;
+			}
+			hgroup .visitor-r #visitor-r-top figure img{
+				position: relative;
+				top: 20px;
+				left: 10px;
+				cursor: pointer;
+			}
+			hgroup .visitor-r #visitor-r-top figure p{
+				position: absolute;
+				left: 40px;
+			    color: #666;
+			    font-size: 10px;
+			    cursor: pointer;
+			}
+			hgroup .visitor-r #visitor-r-top figure p:hover{
+				color: #D36F16;
+			}
+			hgroup .visitor-r #visitor-r-top a{
+				display: block;
+				color: #bbb;
+			    width: 100px;
+			    height: 36px;
+			    line-height: 36px;
+			    background: #eee;
+			    border: 1px solid #eee;
+			    border-radius: 4px;
+			    font-size: 14px;
+			    padding: 0 20px;
+			    box-sizing: border-box;
+			    position: absolute;
+			    right: 0px;
+			    text-decoration: none;
+			    text-align: center;
+			}
+			hgroup .visitor-r #visitor-r-bottom{
+				width: 100%;
+				padding-top: 30px;
+				background: transparent;
+				background: white;
+			}    
+			hgroup .visitor-r #visitor-r-bottom .leave-message{
+				padding: 0 30px;
+			    color: #282828;
+			    box-sizing: border-box;
+			    font-size: 14px;
+			}
+			hgroup .visitor-r #visitor-r-bottom p span{
+			    color: #bbb;
+			    margin-left: 10px;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul{
+				width: 100%;
+				padding:0 30px;
+				box-sizing: border-box;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li {
+				width: 100%;
+				height: 136px;
+				position: relative;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li .header-box2{
+				display: block;
+				overflow: hidden;
+				width: 48px;
+				height: 48px;
+				border-radius: 24px;
+				position: absolute;
+				top: 30px;
+				cursor: pointer;
+				z-index: 3;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li a img{
+				width: 48px;
+				height: 48px;
+				cursor:pointer;
+				/*position: absolute;*/
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure{
+				width: 760px;
+				height: 136px;
+				float: left;
+				box-sizing: border-box;
+				position: relative;
+				padding: 30px 0px 30px 68px;
+				border-bottom: 1px solid #F1F1F1;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure a{
+			    font-weight: 800;
+		        color: #282828;
+           		margin-right: 20px;
+           		position: relative;
+           		text-decoration: none;
+           		font-size: 14px;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure a:hover{
+				color: #D87F31;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure span{
+				color: #bbb;
+				margin-right: 10px;
+				font-size: 14px;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure p{
+				margin-top: 8px;
+			    line-height: 24px;
+			    font-size: 14px;
+			    word-break: break-word;
+		        color: #666;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure div{
+				width: 190px;
+				height: 35px;
+				position: absolute;
+				right: 0px;
+				bottom: 20px;
+				line-height: 35px;
+				cursor: pointer;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure div .report{
+				opacity: 0;
+			}
+			hgroup .visitor-r #visitor-r-bottom ul li figure div span{
+				display:block;
+				width: 12px;
+				height: 35px;
+				line-height: 35px;
+				float:right;
+			}
+			hgroup .visitor-r #like_text{
+				display: block;
+				min-height: 14px;
+			    line-height: 14px;
+			    margin: 20px 0;
+			    color: #666;
+			    font-size: 14px;
+			    position: relative;
+			}
+			hgroup .visitor-r .Maybe_like{
+				width: 848px;
+				height: 318px;
+				/*background: salmon;*/
+			}
+			hgroup .visitor-r .Maybe_like li{
+				width: 197px;
+				height: 308px;
+			    border-radius: 4px;
+			    background: white;
+			    float: left;
+			    margin-right: 2%;
+			    border-radius: 5px;
+			}
+			hgroup .visitor-r .Maybe_like li:nth-of-type(4){
+				 margin-right: 0%;
+			}
+			hgroup .visitor-r .Maybe_like li img{
+				width: 100%;
+				vertical-align: top;
+				cursor: pointer;
+			}
+			hgroup .visitor-r .Maybe_like li img:hover{
+				opacity: 0.8;
+			}
+			hgroup .visitor-r .Maybe_like li div{
+				width: 100%;
+				height: 100px;
+				padding:11px 16px 13px 16px ;
+				box-sizing: border-box;
+				position: relative;
+				border-bottom: 1px solid #EEEEEE;
+			}
+			hgroup .visitor-r .Maybe_like li div a{
+				display: block;
+				font-size: 14px;
+	   			color: #333;
+	   			width: 150px;
+			    vertical-align: middle;
+	    		white-space: nowrap;
+	    		overflow: hidden;
+	    		text-overflow: ellipsis;
+	    		text-decoration: none;
+	    		/*position: relative;*/
+			}
+			hgroup .visitor-r .Maybe_like li div a:hover{
+				color:#DB6F16 ;
+			}
+			hgroup .visitor-r .Maybe_like li div a img{
+				width: 14px;
+				height: 14px;
+				position: absolute;
+				right: 15px;
+				top: 13px;
+			}
+			hgroup .visitor-r .Maybe_like li div p{
+				font-size: 12px;
+			    color: #bbb;
+			    margin-bottom: 17px;
+			    height: 18px;
+			}
+			hgroup .visitor-r .Maybe_like li div span{
+			    font-size: 12px;
+			    color: #bbb;
+			    position: absolute;
+			    bottom: 14px;
+			    cursor: pointer;
+			}
+			hgroup .visitor-r .Maybe_like li div .visit{
+				left: 25px;
+			}
+			hgroup .visitor-r .Maybe_like li div .comment{
+				left: 85px;
+			}
+			hgroup .visitor-r .Maybe_like li div .nice{
+				left: 135px;
+			}
+			hgroup .visitor-r .Maybe_like li div span img{
+				width: 16px;
+				height: 16px;
+				position: relative;
+				right: 5px;
+			}
+			hgroup .visitor-r .Maybe_like li .times{
+				display: block;
+				width: 100%;
+				height: 50px;
+				text-align: left;
+				padding: 0 16px;
+				box-sizing: border-box;
+				line-height: 50px;
+			    font-size: 12px;
+	            color: #333
+			}
+			hgroup .visitor-r .Maybe_like li .times img{
+				width: 24px;
+				height: 24px;
+				border-radius: 50%;
+				position: relative;
+				top: 15px;
+			}
+			footer{
+				width: 1349px;
+				/*background: silver;*/
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<aside class="back-top">
+			<a href="javascript:void(0);"></a>
+		</aside>
+		<header>
+			<img src="lyh-img/img/menu.png" class="menu"/>
+			<div class="menus">
+				<p class="li"><a href="index.html">首页</a><button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></p>
+				<p class="li"><a href="index5.html">发现</a></p>
+					<p class="li1"><a href="">平面</a></p>
+					<p class="li1"><a href="">UI</a></p>
+					<p class="li1"><a href="">插画</a></p>
+					<p class="li1"><a href="">动漫</a></p>
+					<p class="li1"><a href="">摄影</a></p>
+					<p class="li1"><a href="">空间</a></p>
+					<p class="li1"><a href="">工业/产品</a></p>
+					<p class="li1"><a href="">三维</a></p>
+					<p class="li1"><a href="">手工艺</a></p>
+					<p class="li1"><a href="">纯艺术</a></p>
+					<p class="li1"><a href="">服装</a></p>
+					<p class="li1"><a href="">其他</a></p>
+					<p class="li1"><a href="">精选作品</a></p>
+					<p class="li1"><a href="">精选文章</a></p>
+					<p class="li1"><a href="">精选收藏</a></p>
+				<p class="li"><a href="pzk1.html">同城</a></p>
+				<p class="li"><a href="position.html">职位</a></p>
+					<p class="lis"><a href="">职位</a></p>
+					<p class="lis"><a href="">公司</a></p>
+					<p class="lis"><a href="">+发布职位</a></p>
+				<p class="li"><a href="pzk2.html">活动</a></p>
+					<p class="lis"><a href="">设计大赛</a></p>
+					<p class="lis"><a href="">公司专题策划</a></p>
+					<p class="lis"><a href="">线上活动</a></p>
+					<p class="lis"><a href="">线下活动</a></p>
+					<p class="lis"><a href="">需为吸引瓶</a></p>
+				<p class="li"><a href="index3.html">正版素材</a></p>
+					<p class="lis"><a href="index3.html">图片</a></p>
+					<p class="lis"><a href="">视频</a></p>
+					<p class="lis"><a href="index4.html">字体</a></p>
+					<p class="lis"><a href="">音乐</a></p>
+				<p class="li"><a href="course.html" target="_blank">课程</a></p>
+					<p class="lis"><a href="">正在热销</a></p>
+					<p class="lis"><a href="">口碑好课</a></p>
+				<p class="li"><a href="">...</a></p>	
+					<p class="lis"><a href="榜单.html">榜单</a></p>
+					<p class="lis"><a href="设计师.html">设计师</a></p>
+					<p class="lis"><a href="站酷APP.html">站酷APP</a></p>
+					<p class="lis"><a href="字体库.html">站酷字体</a></p>
+			</div>
+			<img src="lyh-img/img/logo.svg" class="pull-left logo"/>
+			<nav class="pull-left">
+				<ul class="nav pull-left clearfix">
+					<li>
+						<a href="index.html">首页</a>
+					</li>
+					<li>
+						<a href="index5.html">发现</a>
+						<div class="fx">
+							<div class="top">
+								<div><a href="">平面</a><span>|</span></div>	
+								<div><a href="">UI</a><span>|</span></div>	
+								<div><a href="">网页</a><span>|</span></div>	
+								<div><a href="">插画</a><span>|</span></div>	
+								<div><a href="">动漫</a><span>|</span></div>	
+								<div><a href="">摄影</a><span>|</span></div>	
+								<div><a href="">空间</a><span>|</span></div>	
+								<div><a href="">工业/产品</a><span>|</span></div>	
+								<div><a href="">三维</a><span>|</span></div>	
+								<div><a href="">影视</a><span>|</span></div>	
+								<div><a href="">手工艺</a><span>|</span></div>	
+								<div><a href="">纯艺术</a><span>|</span></div>	
+								<div><a href="">服装</a><span>|</span></div>	
+								<div><a href="">其他</a><span>|</span></div>	
+											
+							</div>
+							<hr/>
+							<div class="bottom">
+								<a href="">精选作品&nbsp;></a>
+								<a href="">精选文章&nbsp;></a>
+								<a href="">精选收藏&nbsp;></a>
+							</div>
+						</div>
+					
+					</li>
+					<li><a href="pzk1.html">同城</a></li>
+					<li>
+						<a href="position.html">职位</a>
+						<div class="zw">
+							<p><a href="">职位</a></p>
+							<p><a href="">公司</a></p>
+							<p><a href="">+发布职位</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="pzk2.html">活动</a>
+						<div class="zw">
+							<p><a href="">设计大赛</a></p>
+							<p><a href="">公司专题策划</a></p>
+							<p><a href="">线上活动</a></p>
+							<p><a href="">线下活动</a></p>
+							<p><a href="">学习音频</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="index3.html">正版素材</a>
+						<div class="zw">
+							<p><a href="index3.html">图片</a></p>	
+							<p><a href="">视频</a></p>
+							<p><a href="index4.html">字体</a></p>
+							<p><a href="">音乐</a></p>
+						</div>
+					</li>
+					<li>
+						<a href="course.html" target="_blank">课程</a>
+						<div class="zw">
+							<p><a href="">正在热销</a></p>
+							<p><a href="">口碑好课</a></p>
+						</div>
+					</li>
+					<li>
+						<a href=""></a>
+						<div class="zw">
+							<p><a href="榜单.html">榜单</a></p>
+							<p><a href="设计师.html">设计师</a></p>
+							<p><a href="站酷APP.html">站酷APP</a></p>
+							<p><a href="字体库.html">站酷字库</a></p>
+						</div>
+					</li>
+				</ul>
+			</nav>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<div class="log">
+				<a href=""></a>
+			</div>
+			<span><a href="">登录</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="">注册</a></span>
+			<div class="search">
+				<div class="search_top">
+					<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<input type="text" name="" id="" />
+					<img src="lyh-img/img/seach.svg"/>
+				</div>
+				<div class="search_bot">
+					<div class="search1">热门搜索</div>
+					<div class="search2">2019毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">2018毕业展</div>
+					<div class="search2">青春答卷2018</div>
+					<div class="search2">我是毕业生</div>
+				</div>
+			</div>
+		</header>
+		<div class="top-advertisement">
+			<a href="对话未来设计师.html"><img src="lyh-img/imges/advertisement_pic2.jpg"/></a>
+		</div>
+		<div class="top-titleshow">
+			<div id="top-title-left">
+				<nobr>
+					<span><img src="lyh-img/img/header-pic.jpg"/> 站酷彤彤体&站酷锐锐体 <img src="lyh-img/imges/shouyetuijian.svg"/><img class="otherlist" src="lyh-img/imges/onthelist.svg"/></span>
+				</nobr>
+			</div>
+			<div id="top-title-right">
+				<span><img src="lyh-img/imges/shoucangqian_new.svg"/> 收藏</span>
+				<span><img src="lyh-img/imges/pinglunqian.svg"/> 评论</span>
+			</div>
+		</div>
+		<div class="top-list-hidden">
+			<span id="jiantou">
+				
+			</span>
+			<span>上榜经历</span>
+			<span><a href="">2018年10月1日  81期站酷作品总榜第97名</a></span>
+			<span><a href="">2018年10月1日  81期站酷作品总榜第97名</a></span>	
+			<span><a href="">2018年10月1日  81期站酷作品总榜第97名</a></span>	
+			<span><a href="">2018年10月1日  81期站酷作品总榜第97名</a></span>	
+		</div>
+		<div class="fontCard-message">
+			<div id="card-left">
+				<nobr><h2>站酷彤彤体&站酷锐锐体<img src="lyh-img/imges/shouyetuijian.svg"/><img src="lyh-img/imges/onthelist.svg"/></h2></nobr>
+				<p>322天前发布</p> 
+				<figure class="card-left-left">
+					<span><a href="">原创作品</a></span>
+					<i>/</i>
+					<span><a href=""> 平面</a></span>
+					<i>/</i>
+					<span><a href="">字体/字形</a></span>
+					<span><a href="">©</a></span>
+				</figure>
+				<figure class="card-left-right">
+					<nobr><a href=""><img src="lyh-img/imges/card-liulan.svg"/> <span>34242</span></a></nobr>
+					<nobr><a href=""><img src="lyh-img/imges/card-pinglun.svg"/> <span>132</span></a></nobr>
+					<nobr><a href=""><img src="lyh-img/imges/card-zan.svg"/> <span>5321</span></a></nobr>
+				</figure>
+			</div>
+			<div id="card-right">
+				<img class="header-box" src="lyh-img/img/header-pic.jpg"/>
+				<div id="card-message">
+					<span class="card-list-name">叻仔先森</span><nobr><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></nobr>
+					<p>济南 | 平面设计师</p><br />
+					<span class="follow">关注</span>
+					<span class="letter">私信</span>
+				</div>
+			</div>
+		</div>
+		<section>
+			<div class="top-text">
+				站酷彤彤体，站酷锐锐体，这两套字库，设计工作均开始于2017年夏天，经历几轮修改调整之后，于2018年8月定稿；<br />
+				-<br />
+				两份字库作品，都是偏卡通风格的字形，关于字体的命名，“彤彤“和“锐锐”，分别来自于我的女儿和儿子的小名；<br />
+				-<br />
+				彤彤体，笔画温润活泼，憨态可掬，天真而浪漫，字与字之间、笔画与笔画之间的大小灵活变化，赋予字形独特的节奏感和欢快感;<br />
+				锐锐体，字形饱满丰盈，卡通可爱，充满稚气感和童真气息，不规则四边形的笔画组合，使得字体灵活多变，趣味十足；<br />
+				这两款字体，均适用于标题设计，logo设计，广告设计，儿童读物等应用环境，同时，也有较强的延展使用空间。<br />
+				-<br />
+				字库字数：s两款字体，简繁+符号，均9283字；<br />
+				字库作者：刘兵克设计工作室-团队作品；<br />
+				下载方式：站酷官网 / 附件下载；<br />
+				-<br />
+				供个人非商业免费使用；<br />
+				如商业用途，请致电站酷官网：400-6066-100。<br />
+				-<br />
+				谢谢大家阅读<br />
+				-<br />
+				刘兵克<br />
+				写于2018年9月18日
+			</div>
+			<figure>
+				<img src="lyh-img/imges/longpic1.jpg"/>
+				<img src="lyh-img/imges/longpic2.jpg"/>
+				<img src="lyh-img/imges/longpic3.png"/>
+				<img src="lyh-img/imges/longpic4.png"/>
+			</figure>
+			<div class="nice-butBox">
+				<span>
+					<img src="lyh-img/imges/zuopindianzan.svg"/>
+					<p>2266</p>
+				</span>
+			</div>
+		</section>
+		<div class="m-otherbut">
+			<div id="otherbut-left">
+				<span>标签：</span>
+				<a href="">字体设计</a>
+				<a href="">字库设计</a>
+				<a href="">刘兵克</a>
+				<a href="">字体帮</a>
+			</div>
+			<div id="otherbut-right">
+				<a href=""><img src="lyh-img/imges/details-share.svg"/>分享</a>
+				<a href=""><img src="lyh-img/imges/xiazaiqian_new.svg"/>7.12m</a>
+				<a href=""><img src="lyh-img/imges/shoucangqian_new.svg"/>收藏</a>
+			</div>
+			<nobr><span id="report"><img src="lyh-img/imges/report_pic.png"/></span></nobr>
+		</div>
+		<hgroup>
+			<aside class="liscard-l">
+				<div class="person_card">
+					<img class="header-box" src="lyh-img/img/header-pic.jpg"/>
+					<div id="card-messages">
+						<div><span class="card-list-name">叻仔先森</span><img src="lyh-img/img/honor.svg"/><img src="lyh-img/img/honor_gogoup.svg"/></div>
+						<p>济南 | 平面设计师</p><br />
+						<span class="follow">关注</span>
+						<span class="letter">私信</span>
+					</div>
+				</div>
+				<div class="work-messageCard">
+					<span class="title">作品信息<p>▼</p></span>
+					<div id="messageCard-m">
+						<p>创作团体</p>
+						<img src="lyh-img/imges/messageCard-headpic.jpg"/>
+						<a>字体帮字体设计</a>
+						<p><img src="lyh-img/imges/dingwei-icon.svg"/>北京</p>
+					</div>
+					<div id="messageCard-time">
+						<p>创作时间</p>
+						<p>2018/08/01</p>
+					</div>
+				</div>
+				<div id="collection-box">
+					<span>记录收藏夹</span>
+					<figure>
+						<img src="lyh-img/imges/collection-pic1.jpg"/>
+						<img src="lyh-img/imges/collection-pic2.jpg"/>
+						<img src="lyh-img/imges/collection-pic3.jpg"/>
+						<img src="lyh-img/imges/collection-pic4.jpg"/>
+						<a href="">学习</a>
+					</figure>
+					<span><a href="">更多收录此作品的收藏夹</a></span>
+				</div>
+				<span><img src="lyh-img/imges/aside_adv.jpg" alt="" /></span>
+			</aside>
+			<div class="list-advertisement">
+				<ul>
+					<li>
+						<img src="lyh-img/imges/list-apic1.jpg"/>
+						<p>字体设计直播课，学员作业又一波 </p>
+						<span id="">
+							<img src="lyh-img/img/putongtuijian.svg"/>
+						</span>
+					</li>
+					<li>
+						<img src="lyh-img/imges/list-apic2.jpg"/>
+						<p>字体设计直播课，学员作业又一波 </p>
+						<span id="">
+							<img src="lyh-img/img/putongtuijian.svg"/>
+						</span>
+					</li>
+					<li>
+						<img src="lyh-img/imges/list-apic3.jpg"/>
+						<p>字体设计直播课，学员作业又一波 </p>
+						<span id="">
+							<img src="lyh-img/img/putongtuijian.svg"/>
+						</span>
+					</li>
+					<li>
+						<img src="lyh-img/imges/list-apic4.jpg"/>
+						<p>字体设计直播课，学员作业又一波 </p>
+						<span id="">
+							<img src="lyh-img/img/putongtuijian.svg"/>
+						</span>
+					</li>
+				</ul>
+			</div>
+			<div class="visitor-r">
+				<div id="visitor-r-top">
+					<input type="" name="" id="" value="" />
+					<span>2000</span>
+					<figure>
+						<nobr><img src="lyh-img/img/biaoqing.svg"/><p>添加表情 </p></nobr>
+						<a href="">评论</a>
+					</figure>
+				</div>
+				<div id="visitor-r-bottom">
+					<p class="leave-message">全部评论<span>2332</span></p>
+					<ul>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>快点更新啊！！！</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+						<li>
+							<a  class="header-box2" href=""><img class="" src="lyh-img/img/header-s2.jpg"/></a>
+							<figure>
+								<nobr><a href="">CY小恶魔</a><span>9天前</span></nobr>
+								<p>喜欢，可爱，感觉锐锐应用的方面更广呀</p>
+								<div>
+									<img class="report" src="lyh-img/imges/report_pic.png"/>
+									<img class="pinglun" src="lyh-img/imges/pinglun.png"/>
+									<img class="pinglunzan" src="lyh-img/imges/pinglundainzan.png"/>
+									<span>0</span>
+								</div>
+							</figure>
+						</li>
+					</ul>
+				</div>
+				<span id="like_text">你可能喜欢</span>
+				<figure class="Maybe_like">
+					<ul class="connter">
+						<li>
+							<img src="lyh-img/imges/maybe_like1.jpg"/>
+							<div>
+								<a href="">站酷意大利体《青春》<img src="lyh-img/img/putongtuijian.svg"/></a>
+								<p>平面-字体/字形</p>
+								<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+								<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+								<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+							</div>
+							<span class="times"><img src="lyh-img/img/header-s1.jpg"/> &nbsp; &nbsp;妙典设计</span>
+						</li>
+						<li>
+							<img src="lyh-img/imges/maybe_like2.jpg"/>
+							<div>
+								<a href="">站酷意大利体《青春》<img src="lyh-img/img/putongtuijian.svg"/></a>
+								<p>平面-字体/字形</p>
+								<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+								<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+								<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+							</div>
+							<span class="times"><img src="lyh-img/img/header-s1.jpg"/> &nbsp; &nbsp;妙典设计</span>
+						</li><li>
+							<img src="lyh-img/imges/maybe_like3.jpg"/>
+							<div>
+								<a href="">站酷意大利体《青春》<img src="lyh-img/img/putongtuijian.svg"/></a>
+								<p>平面-字体/字形</p>
+								<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+								<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+								<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+							</div>
+							<span class="times"><img src="lyh-img/img/header-s1.jpg"/> &nbsp; &nbsp;妙典设计</span>
+						</li><li>
+							<img src="lyh-img/imges/maybe_like4.jpg"/>
+							<div>
+								<a href="">站酷意大利体《青春》<img src="lyh-img/img/putongtuijian.svg"/></a>
+								<p>平面-字体/字形</p>
+								<span class="visit"><img src="lyh-img/img/visit-pic.svg"/>2317</span>
+								<span class="comment"><img src="lyh-img/img/connter_pic.svg"/>30</span>
+								<span class="nice"><img src="lyh-img/img/card-zan.svg"/>140</span>
+							</div>
+							<span class="times"><img src="lyh-img/img/header-s1.jpg"/> &nbsp; &nbsp;妙典设计</span>
+						</li>
+					</ul>
+				</figure>
+			</div>
+		</hgroup>
+		<footer>
+			<div class="footer1">
+				<div class="footer_wrap container">
+					<div class="footer_wrap1">         
+						<a href=""><span><img src="lyh-img/img/app.svg"/></span><img src="lyh-img/img/ewm.png"/>移动版</a>
+						<a href="">关于我们</a>
+						<a href="">加入站酷</a>
+						<a href="">用户协议</a>
+						<a href="">隐私政策</a>
+						<a href="">侵权申诉</a>
+						<a href="">企业服务</a>
+						<a href="">帮助中心</a>
+						<a href="">联系我们</a>
+						<a href="">中文</a>
+						<a href="">English</a>
+					</div>
+					<div class="footer_wrap2">
+						<a href=""><img src="lyh-img/img/ewm2.jpg"/></a>
+						<a href=""></a>
+					</div>
+				</div>
+				<div class="footer_tap container">						     
+					<p>
+					<a href="">京ICP备11017824号-4</a>
+					<span>|</span>
+					<a href="">京ICP证130164号</a>
+					<span>|</span>
+					<a href="">京公网安备11010502000501号</a>
+					<span>|</span>
+					<a href=""> 网络文化经营许可证 京网文[2016]6173-844号</a>
+					<span>|</span>
+					<a href="">广播电视节目制作经营许可证（京）字第06990号</a>
+					</p>
+					<p>
+					<a href="">营业执照</a>
+					<span>|</span>
+					<a href="">网上有害信息举报专区</a>
+					<span>|</span>
+					<a href="">不良信息举报电话：010-56538658</a>
+					<span>|</span>
+					<a href=""> 举报邮箱 jubao@zcool.com.cn</a>
+					<span>|</span>
+					<a href="">联系电话：010-56538600</a>
+					<span>|</span>
+					<a href="">Copyright © 2006-2019 ZCOOL站酷</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<script>
+			//举报图标移入移出
+			$(' #visitor-r-bottom ul li').hover(function(){
+//				console.log($('.report'));
+				$('.report').css('opacity','.5').parent('div').siblings('div').children('.report').css('opacity','0');
+			},function(){
+				$('.report').css('opacity','0');
+			})
+			$(' .report').hover(function(){
+				$(this).css('opacity','1');
+			},function(){
+				$(this).css('opacity','.5');
+			})
+			//评论图标移入移出
+			$('.pinglun').hover(function(){
+				$(this).attr('src','lyh-img/imges/pinglun_hover.png');
+			},function(){
+				$(this).attr('src','lyh-img/imges/pinglun.png');
+			})
+			//评论点赞图标移入移出
+				$('.pinglunzan').hover(function(){
+				$(this).attr('src','lyh-img/imges/pinglundainzan_hover.png');
+			},function(){
+				$(this).attr('src','lyh-img/imges/pinglundainzan.png');
+			})
+			//顶部滑出标题列表图标移入移出
+				$('.otherlist').hover(function(){
+				$('.top-list-hidden').css('display','block');
+			},function(){
+				$('.top-list-hidden').css('display','none');
+			})	
+			//滚轮下拉顶部列表
+			$(window).scroll(function(){
+				console.log($(window).scrollTop());
+				if ($(window).scrollTop()<300) {
+					$('.top-titleshow').css('display','none');
+					
+				}else if($(window).scrollTop()>19363){
+					$('.top-titleshow').css('display','none');
+				}else{
+					$('.top-titleshow').css('display','block');
+				}
+			})
+			//回顶部
+			$('.back-top').click(function(){
+				$(window).scrollTop(0);
+			})
+			//滚轮回顶部图标出现
+			$(window).scroll(function(){
+				if($(window).scrollTop()<1000){
+					$('.back-top').css('display','none');
+				}else{ 
+					$('.back-top').css('display','block');
+				}
+			})
+		</script>
+	</body>
+</html>
