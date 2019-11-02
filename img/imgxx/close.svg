@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.1 (67048) - http://www.bohemiancoding.com/sketch -->
+    <title>广告关闭icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400000006">
+        <g id="18_新人专享优化" transform="translate(-1008.000000, -1188.000000)">
+            <g id="广告关闭icon" transform="translate(1008.000000, 1188.000000)">
+                <circle id="icon/close/H40" fill="#FFFFFF" cx="18" cy="18" r="18"></circle>
+                <polygon id="Combined-Shape" fill="#1F1F1F" points="17.991342 16.3698955 22.8936989 11.4722222 24.2943723 12.8715575 19.3920154 17.7692308 24.2943723 22.6669041 22.8936989 24.0662393 17.991342 19.168566 13.0889851 24.0662393 11.6883117 22.6669041 16.5906686 17.7692308 11.6883117 12.8715575 13.0889851 11.4722222"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
